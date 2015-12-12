@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <TableLayout
+        android:layout_height="fill_parent" android:layout_width="fill_parent"
+        android:background="#ffffff">
+        <TextView
+            android:id="@+id/introducao"
+            android:text="Todos os campos são obrigatórios" />
+        <TableRow>
+            <TextView android:id="@+id/text1" android:text="Nome:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etNomeProcesso" android:width="240px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text2" android:text="Responsável:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/etResponsavel"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text3" android:text="Papel:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etPapel"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text4" android:text="Objetivo:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etObjetivo"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text5" android:text="Condição:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etCondicao"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text6" android:text="Entradas:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etEntradas"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text7" android:text="Saídas:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etSaidas"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text8" android:text="Roteiro:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etRoteiro"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text9" android:text="Validação:"	android:textColor="#000000" />
+            <EditText android:id="@+id/etValidacao"  />
+        </TableRow>
+
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+            <ImageButton android:src="@drawable/cancelar" android:id="@+id/btCancelar" android:text="Cancelar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageButton android:src="@drawable/salvar" android:id="@+id/btSalvar" android:text=" Salvar "
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageButton android:src="@drawable/excluir" android:id="@+id/btExcluir" android:text=" Excluir "
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableLayout>
+</ScrollView>

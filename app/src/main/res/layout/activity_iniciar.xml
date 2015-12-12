@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#DCDCDC">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:text="BEM-VINDO"
+        />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="320px"
+        android:src="@drawable/soc_maestro"/>
+
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="200dp"
+        android:layout_height="100px"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:hint="@string/login_edt_user_hint"
+        android:fontFamily="Helvetica"
+        android:singleLine="true"
+        android:maxLength="15"
+        android:imeOptions="actionNext" />
+
+    <EditText
+        android:id="@+id/etSenha"
+        android:layout_width="200dp"
+        android:layout_height="100px"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:hint="@string/login_edt_password_hint"
+        android:fontFamily="Helvetica"
+        android:singleLine="true"
+        android:maxLength="15"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip" >
+
+        <Button
+            android:id="@+id/botaoLogar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="@string/login_btn_enter_value" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/botaoCadastrar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#1E90FF"
+                android:textColor="#F8F8FF"
+                android:text="Cadastrar"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/botaoLimpar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="@string/login_btn_limpar_value" />
+
+    </LinearLayout>
+
+</LinearLayout>

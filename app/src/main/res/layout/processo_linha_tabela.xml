@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    android:background="#E8E8E8" >
+
+    <TableRow>
+    <TextView android:id="@+id/etNProcesso"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:typeface="sans"
+        android:layout_marginTop="10dp"
+        android:text="NOME DO PROCESSO"
+        />
+    <TextView android:id="@+id/etNResponsavel"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:typeface="sans"
+        android:layout_marginTop="10dp"
+        android:text="RESPONSAVEL"
+        android:layout_marginLeft="50dp"
+        />
+    </TableRow>
+
+    <TableRow>
+    <TextView android:id="@+id/etNomeProcesso"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:typeface="sans"
+        />
+    <TextView android:id="@+id/etResponsavel"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:typeface="sans"
+        android:layout_marginLeft="50dp"
+        />
+    </TableRow>
+</TableLayout>

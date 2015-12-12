@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#DCDCDC">
+
+    <Button
+        android:id="@+id/botaoConf"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#F8F8FF"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="CONF" />
+
+    <Button
+        android:id="@+id/botaoPPendentes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Processos Pendentes" />
+
+    <Button
+        android:id="@+id/botaoPModelados"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Processos Modelados" />
+
+    <Button
+        android:id="@+id/botaoStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Status Dúvidas" />
+
+    <Button
+        android:id="@+id/botaoEmpresa"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Empresa Vigente" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dip" >
+
+        <Button
+            android:id="@+id/botaoLogoff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Logoff" />
+
+        <Button
+            android:id="@+id/botaoSinc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Sinc" />
+
+    </LinearLayout>
+
+</LinearLayout>
