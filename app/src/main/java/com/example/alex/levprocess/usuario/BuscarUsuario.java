@@ -41,8 +41,14 @@ public class BuscarUsuario extends Activity implements View.OnClickListener {
         finish();
     }
     public void onClick(View view) {
-        EditText login = (EditText) findViewById(R.id.etUsuario);
-        EditText senha = (EditText) findViewById(R.id.etSenha);
+        EditText login = (EditText) findViewById(R.id.campoLogin);
+        EditText senha = (EditText) findViewById(R.id.campoSenha);
+        EditText nome = (EditText) findViewById(R.id.campoNome);
+        EditText cpf = (EditText) findViewById(R.id.campoCpf);
+        EditText dataNascimento = (EditText) findViewById(R.id.campoDataNascimento);
+        EditText telefone = (EditText) findViewById(R.id.campoTelefone);
+        EditText email = (EditText) findViewById(R.id.campoEmail);
+        EditText tipo = (EditText) findViewById(R.id.campoTipo);
 
         // Recupera o nome do usuario
         String loginUsuario = login.getText().toString();
@@ -52,10 +58,22 @@ public class BuscarUsuario extends Activity implements View.OnClickListener {
             // Atualiza os campos com o resultado
             login.setText(u.login);
             senha.setText(u.senha);
+            nome.setText(u.nome);
+            cpf.setText(u.cpf);
+            dataNascimento.setText(u.dataNascimento);
+            telefone.setText(u.telefone);
+            email.setText(u.email);
+            tipo.setText(u.tipo);
         } else {
             // Limpa os campos
             login.setText("");
             senha.setText("");
+            nome.setText("");
+            cpf.setText("");
+            dataNascimento.setText("");
+            telefone.setText("");
+            email.setText("");
+            tipo.setText("");
 
             Toast.makeText(BuscarUsuario.this, "Nenhum usuario encontrado", Toast.LENGTH_SHORT).show();
         }

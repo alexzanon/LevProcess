@@ -7,14 +7,38 @@
         android:background="#ffffff">
         <TextView
             android:id="@+id/introducao"
-            android:text="Campos com * são obrigatórios!" />
+            android:text="Todos os campos são obrigatórios" />
         <TableRow>
-            <TextView android:id="@+id/text1" android:text="Login: *"	android:textColor="#000000" />
+            <TextView android:id="@+id/text1" android:text="Login:"	android:textColor="#000000" />
             <EditText android:id="@+id/campoLogin" android:width="240px" />
         </TableRow>
         <TableRow>
-            <TextView android:id="@+id/text2" android:text="Senha: *" 	android:textColor="#000000" />
+            <TextView android:id="@+id/text2" android:text="Senha:" 	android:textColor="#000000" />
             <EditText android:id="@+id/campoSenha"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text3" android:text="Nome:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoNome"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text4" android:text="CPF:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoCpf"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text5" android:text="Data de Nascimento:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoDataNascimento"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text6" android:text="Telefone:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoTelefone"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text7" android:text="E-mail:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoEmail"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text8" android:text="Tipo:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoTipo"  />
         </TableRow>
 
         <LinearLayout android:layout_width="wrap_content"

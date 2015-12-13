@@ -12,7 +12,6 @@ public class Roteiro {
     private long id;
     private String nome;
     private Processo processo;
-    private Atividade_Condicao atividade_condicao;
 
     public long getId() {
         return id;
@@ -38,11 +37,4 @@ public class Roteiro {
         this.processo = processo;
     }
 
-    public Atividade_Condicao getAtividade_condicao() {
-        return atividade_condicao;
-    }
-
-    public void setAtividade_condicao(Atividade_Condicao atividade_condicao) {
-        this.atividade_condicao = atividade_condicao;
-    }
 }

@@ -11,13 +11,19 @@ import android.provider.BaseColumns;
 
 public class Usuario {
 
-    public static String[] colunas = new String[] { Usuarios._ID, Usuarios.LOGIN, Usuarios.SENHA  };
+    public static String[] colunas = new String[] { Usuarios._ID, Usuarios.LOGIN, Usuarios.SENHA, Usuarios.NOME, Usuarios.CPF, Usuarios.DATANASCIMENTO, Usuarios.TELEFONE, Usuarios.EMAIL, Usuarios.TIPO  };
 
     public static final String AUTHORITY = "br.livro.android.provider.usuarios";
 
     public long id;
     public String login;
     public String senha;
+    public String nome;
+    public String cpf;
+    public String dataNascimento;
+    public String telefone;
+    public String email;
+    public String tipo;
 
     public Usuario() {
 
@@ -30,11 +36,17 @@ public class Usuario {
 
     }
 
-    public Usuario(long id, String login, String senha) {
+    public Usuario(long id, String login, String senha, String nome, String cpf, String dataNascimento, String telefone, String email, String tipo) {
         super();
         this.id = id;
         this.login = login;
         this.senha = senha;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.telefone = telefone;
+        this.email = email;
+        this.tipo = tipo;
     }
 
     public static final class Usuarios implements BaseColumns {
@@ -54,6 +66,13 @@ public class Usuario {
 
         public static final String LOGIN = "login";
         public static final String SENHA = "senha";
+        public static final String NOME = "nome";
+        public static final String CPF = "cpf";
+        public static final String DATANASCIMENTO = "dataNascimento";
+        public static final String TELEFONE = "telefone";
+        public static final String EMAIL = "email";
+        public static final String TIPO = "tipo";
+
         // Metodo que constroi uma Uri para um Usuario especifico, com o seu id
         // A Uri e no formato "content://br.livro.android.provider.usuario/usuarios/id"
         public static Uri getUriId(long id) {
@@ -65,6 +84,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Login: " + login + ", Senha: " + senha;
+        return "Login: " + login + ", Senha: " + senha + ", Nome: " + nome + ", CPF: " + cpf + ", Data de Nascimento: " + dataNascimento + ", Telefone: " + telefone + ", E-mail: " + email + ", Tipo: " + tipo;
     }
 }

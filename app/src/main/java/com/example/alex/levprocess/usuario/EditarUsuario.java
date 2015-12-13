@@ -21,6 +21,12 @@ public class EditarUsuario extends Activity {
     static final int RESULT_EXCLUIR = 2;
     private EditText campoLogin;
     private EditText campoSenha;
+    private EditText campoNome;
+    private EditText campoCpf;
+    private EditText campoDataNascimento;
+    private EditText campoTelefone;
+    private EditText campoEmail;
+    private EditText campoTipo;
     private Long id;
     private RepositorioUsuario repositorio;
 
@@ -31,6 +37,12 @@ public class EditarUsuario extends Activity {
         setContentView(R.layout.form_editar_usuario);
         campoLogin = (EditText) findViewById(R.id.campoLogin);
         campoSenha = (EditText) findViewById(R.id.campoSenha);
+        campoNome = (EditText) findViewById(R.id.campoNome);
+        campoCpf = (EditText) findViewById(R.id.campoCpf);
+        campoDataNascimento = (EditText) findViewById(R.id.campoDataNascimento);
+        campoTelefone = (EditText) findViewById(R.id.campoTelefone);
+        campoEmail = (EditText) findViewById(R.id.campoEmail);
+        campoTipo = (EditText) findViewById(R.id.campoTipo);
         id = null;
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
@@ -41,6 +53,12 @@ public class EditarUsuario extends Activity {
                 Usuario usuario = buscarUsuario(id);
                 campoLogin.setText(usuario.login);
                 campoSenha.setText(usuario.senha);
+                campoNome.setText(usuario.nome);
+                campoCpf.setText(usuario.cpf);
+                campoDataNascimento.setText(usuario.dataNascimento);
+                campoTelefone.setText(usuario.telefone);
+                campoEmail.setText(usuario.email);
+                campoTipo.setText(usuario.tipo);
             }
         }
 
@@ -92,6 +110,12 @@ public class EditarUsuario extends Activity {
         }
         usuario.login = campoLogin.getText().toString();
         usuario.senha = campoSenha.getText().toString();
+        usuario.nome = campoNome.getText().toString();
+        usuario.cpf = campoCpf.getText().toString();
+        usuario.dataNascimento = campoDataNascimento.getText().toString();
+        usuario.telefone = campoTelefone.getText().toString();
+        usuario.email = campoEmail.getText().toString();
+        usuario.tipo = campoTipo.getText().toString();
         salvarUsuario(usuario);// Salvar
         setResult(RESULT_OK, new Intent());	// OK
         // Fecha a tela

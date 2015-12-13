@@ -182,6 +182,12 @@ public class RepositorioUsuario {
         ContentValues values = new ContentValues();
         values.put(Usuarios.LOGIN, usuario.login);
         values.put(Usuarios.SENHA, usuario.senha);
+        values.put(Usuarios.NOME, usuario.nome);
+        values.put(Usuarios.CPF, usuario.cpf);
+        values.put(Usuarios.DATANASCIMENTO, usuario.dataNascimento);
+        values.put(Usuarios.TELEFONE, usuario.telefone);
+        values.put(Usuarios.EMAIL, usuario.email);
+        values.put(Usuarios.TIPO, usuario.tipo);
         long id = inserir(values);
         return id;
     }
@@ -195,6 +201,12 @@ public class RepositorioUsuario {
         ContentValues values = new ContentValues();
         values.put(Usuarios.LOGIN, usuario.login);
         values.put(Usuarios.SENHA, usuario.senha);
+        values.put(Usuarios.NOME, usuario.nome);
+        values.put(Usuarios.CPF, usuario.cpf);
+        values.put(Usuarios.DATANASCIMENTO, usuario.dataNascimento);
+        values.put(Usuarios.TELEFONE, usuario.telefone);
+        values.put(Usuarios.EMAIL, usuario.email);
+        values.put(Usuarios.TIPO, usuario.tipo);
         String _id = String.valueOf(usuario.id);
         String where = Usuarios._ID + "=?";
         String[] whereArgs = new String[] { _id };
@@ -237,6 +249,13 @@ public class RepositorioUsuario {
             usuario.id = c.getLong(0);
             usuario.login = c.getString(1);
             usuario.senha = c.getString(2);
+            usuario.nome = c.getString(3);
+            usuario.cpf = c.getString(4);
+            usuario.dataNascimento = c.getString(5);
+            usuario.telefone = c.getString(6);
+            usuario.email = c.getString(7);
+            usuario.tipo = c.getString(8);
+
             return usuario;
         }
         return null;
@@ -261,6 +280,12 @@ public class RepositorioUsuario {
             int idxId = c.getColumnIndex(Usuarios._ID);
             int idxLogin = c.getColumnIndex(Usuarios.LOGIN);
             int idxSenha = c.getColumnIndex(Usuarios.SENHA);
+            int idxNome = c.getColumnIndex(Usuarios.NOME);
+            int idxCpf = c.getColumnIndex(Usuarios.CPF);
+            int idxDataNascimento = c.getColumnIndex(Usuarios.DATANASCIMENTO);
+            int idxTelefone = c.getColumnIndex(Usuarios.TELEFONE);
+            int idxEmail = c.getColumnIndex(Usuarios.EMAIL);
+            int idxTipo = c.getColumnIndex(Usuarios.TIPO);
             // Loop ate o final
             do {
                 Usuario usuario = new Usuario();
@@ -269,6 +294,12 @@ public class RepositorioUsuario {
                 usuario.id = c.getLong(idxId);
                 usuario.login = c.getString(idxLogin);
                 usuario.senha = c.getString(idxSenha);
+                usuario.nome = c.getString(idxNome);
+                usuario.cpf = c.getString(idxCpf);
+                usuario.dataNascimento = c.getString(idxDataNascimento);
+                usuario.telefone = c.getString(idxTelefone);
+                usuario.email = c.getString(idxEmail);
+                usuario.tipo = c.getString(idxTipo);
             } while (c.moveToNext());
         }
         return usuarios;
@@ -287,6 +318,12 @@ public class RepositorioUsuario {
                 usuario.id = c.getLong(0);
                 usuario.login = c.getString(1);
                 usuario.senha = c.getString(2);
+                usuario.nome = c.getString(3);
+                usuario.cpf = c.getString(4);
+                usuario.dataNascimento = c.getString(5);
+                usuario.telefone = c.getString(6);
+                usuario.email = c.getString(7);
+                usuario.tipo = c.getString(8);
             }
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar o usuário pelo login: " + e.toString());
