@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <TableLayout
+        android:layout_height="fill_parent" android:layout_width="fill_parent"
+        android:background="#ffffff">
+        <TextView
+            android:id="@+id/introducao"
+            android:text="Todos os campos são obrigatórios" />
+        <TableRow>
+            <TextView android:id="@+id/text1" android:text="Nome da Atividade Condição:"	android:textColor="#000000" />
+            <EditText android:id="@+id/campoNomeAtividade" android:width="240px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text2" android:text="Responsável:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoResponsavel"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text3" android:text="Departamento:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoDepartamento"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text4" android:text="Tipo:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoTipo"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text5" android:text="Detalhamento:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoDetalhamento"  />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/text6" android:text="Documento:" 	android:textColor="#000000" />
+            <EditText android:id="@+id/campoDocumento"  />
+        </TableRow>
+
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+            <ImageButton android:src="@drawable/cancelar" android:id="@+id/btCancelar" android:text="Cancelar"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageButton android:src="@drawable/salvar" android:id="@+id/btSalvar" android:text=" Salvar "
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageButton android:src="@drawable/excluir" android:id="@+id/btExcluir" android:text=" Excluir "
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableLayout>
+</ScrollView>

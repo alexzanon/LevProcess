@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" android:layout_width="fill_parent"
+    android:background="#ffffff">
+    <TableRow>
+        <TextView android:id="@+id/text1" android:text="Nome Atividade Condição:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etNomeAtividade" android:width="240px" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:src="@drawable/pesquisar"
+            android:id="@+id/btBuscar" android:text="Buscar" />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/text2" android:text="Responsável:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etResponsavel"  />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/text3" android:text="Departamento:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etDepartamento"  />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/text4" android:text="Tipo:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etTipo"  />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/text5" android:text="Detalhamento:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etDetalhamento"  />
+    </TableRow>
+    <TableRow>
+        <TextView android:id="@+id/text6" android:text="Documento:"
+            android:textColor="#000000" />
+        <EditText android:id="@+id/etDocumento"  />
+    </TableRow>
+
+</TableLayout>

@@ -53,6 +53,24 @@
         <activity
             android:name=".usuario.BuscarUsuario" >
         </activity>
+        <activity
+            android:name=".roteiro.CadastrarRoteiro" >
+        </activity>
+        <activity
+            android:name=".roteiro.BuscarRoteiro" >
+        </activity>
+        <activity
+            android:name=".roteiro.EditarRoteiro" >
+        </activity>
+        <activity
+            android:name=".atividade_condicao.CadastrarAtividade_Condicao" >
+        </activity>
+        <activity
+            android:name=".atividade_condicao.EditarAtividade_Condicao" >
+        </activity>
+        <activity
+            android:name=".atividade_condicao.BuscarAtividade_Condicao" >
+        </activity>
     </application>
 
 </manifest>

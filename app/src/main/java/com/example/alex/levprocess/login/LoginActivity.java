@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.cliente.MenuCliente;
 import com.example.alex.levprocess.modelador.MenuModelador;
 import com.example.alex.levprocess.usuario.EditarUsuario;
 
@@ -85,7 +86,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                  * Por questões de simplicidade e entendimento emitiremos somente um alerta
                  */
                 Toast.makeText(this, resources.getString(R.string.login_auth_ok), Toast.LENGTH_LONG).show();
-                Intent it = new Intent(LoginActivity.this, MenuModelador.class);
+                Intent it = new Intent(LoginActivity.this, MenuCliente.class);
                 startActivityForResult(it, 1);
             }
         }

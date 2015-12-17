@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.atividade_condicao.CadastrarAtividade_Condicao;
 import com.example.alex.levprocess.login.LoginActivity;
 import com.example.alex.levprocess.processo.NovoProcesso;
+import com.example.alex.levprocess.roteiro.CadastrarRoteiro;
 
 public class MenuCliente extends Activity {
 
@@ -31,7 +33,7 @@ public class MenuCliente extends Activity {
         });
         botaoNProcesso.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(MenuCliente.this, NovoProcesso.class);
+                Intent it = new Intent(MenuCliente.this, CadastrarAtividade_Condicao.class);
                 startActivityForResult(it, 2);
             }
         });

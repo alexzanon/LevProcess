@@ -4,6 +4,8 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+import com.example.alex.levprocess.roteiro.Roteiro;
+
 /**
  * Created by Alex on 12/11/2015.
  */
@@ -54,11 +56,11 @@ public class Processo {
         private Processos() {
         }
 
-        // content://br.livro.android.provider.usuario/usuarios
+        // content://br.livro.android.provider.processo/processos
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/processos");
-        // Mime Type para todos os usuarios
+        // Mime Type para todos os processo
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.google.processos";
-        // Mime Type para um unico usuario
+        // Mime Type para um unico processo
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.processos";
         // Ordenacao default para inserir no order by
         public static final String DEFAULT_SORT_ORDER = "_id ASC";
