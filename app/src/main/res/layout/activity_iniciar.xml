@@ -16,7 +16,7 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="320px"
-        android:src="@drawable/soc_maestro"/>
+        android:src="@drawable/acesso"/>
 
     <EditText
         android:id="@+id/etUsuario"

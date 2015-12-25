@@ -10,10 +10,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.alex.levprocess.R;
-import com.example.alex.levprocess.atividade_condicao.CadastrarAtividade_Condicao;
 import com.example.alex.levprocess.login.LoginActivity;
 import com.example.alex.levprocess.processo.NovoProcesso;
-import com.example.alex.levprocess.roteiro.CadastrarRoteiro;
+import com.example.alex.levprocess.roteiro.NovoRoteiro;
 
 public class MenuCliente extends Activity {
 
@@ -23,6 +22,7 @@ public class MenuCliente extends Activity {
 
         Button botaoLogoff = (Button) findViewById(R.id.botaoLogoff);
         Button botaoNProcesso = (Button) findViewById(R.id.botaoNProcesso);
+        Button botaoNRoteiro = (Button) findViewById(R.id.botaoNRoteiro);
 
 
         botaoLogoff.setOnClickListener(new View.OnClickListener() {
@@ -33,7 +33,13 @@ public class MenuCliente extends Activity {
         });
         botaoNProcesso.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent it = new Intent(MenuCliente.this, CadastrarAtividade_Condicao.class);
+                Intent it = new Intent(MenuCliente.this, NovoProcesso.class);
+                startActivityForResult(it, 2);
+            }
+        });
+        botaoNRoteiro.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(MenuCliente.this, NovoRoteiro.class);
                 startActivityForResult(it, 2);
             }
         });

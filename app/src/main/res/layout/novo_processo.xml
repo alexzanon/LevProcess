@@ -43,13 +43,7 @@
 
         <LinearLayout android:layout_width="wrap_content"
             android:layout_height="fill_parent">
-            <Button
-                android:id="@+id/botaoRoteiro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textColor="#696969"
-                android:text="Cadastrar Roteiro" />
+
             <ImageButton android:src="@drawable/cancelar" android:id="@+id/btCancelar" android:text="Cancelar"
                 android:layout_width="wrap_content" android:layout_height="wrap_content" />
             <ImageButton android:src="@drawable/salvar" android:id="@+id/btSalvar" android:text=" Salvar "

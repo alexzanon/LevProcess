@@ -11,24 +11,22 @@ import android.provider.BaseColumns;
 
 public class Roteiro {
 
-    public static String[] colunas = new String[] { Roteiros._ID, Roteiros.NOME, Roteiros.PROCESSO, Roteiros.ATIVIDADE_CONDICAO };
+    public static String[] colunas = new String[] { Roteiros._ID, Roteiros.NOME, Roteiros.PROCESSO };
 
     public static final String AUTHORITY = "br.livro.android.provider.roteiro";
 
     public long id;
     public String nome;
     public String processo;
-    public String atividade_condicao;
 
     public Roteiro() {
 
             }
 
-    public Roteiro(String nome, String processo, String atividade_condicao) {
+    public Roteiro(String nome, String processo) {
             super();
             this.nome = nome;
             this.processo = processo;
-            this.atividade_condicao = atividade_condicao;
             }
 
     public Roteiro(long id, String nome, String processo) {
@@ -55,7 +53,6 @@ public class Roteiro {
 
         public static final String NOME = "nome";
         public static final String PROCESSO = "processo";
-        public static final String ATIVIDADE_CONDICAO = "atividade_condicao";
 
         // Metodo que constroi uma Uri para um Roteiro especifico, com o seu id
         // A Uri e no formato "content://br.livro.android.provider.roteiro/roteiros/id"
@@ -68,6 +65,6 @@ public class Roteiro {
 
         @Override
         public String toString() {
-            return "Nome: " + nome + ", Processo: " + processo + ", Atividade-Condição: " + atividade_condicao;
+            return "Nome: " + nome + ", Processo: " + processo;
         }
     }

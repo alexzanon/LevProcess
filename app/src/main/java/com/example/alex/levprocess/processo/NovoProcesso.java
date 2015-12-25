@@ -34,7 +34,7 @@ public class NovoProcesso extends Activity {
         id = null;
 
         ImageButton btCancelar = (ImageButton) findViewById(R.id.btCancelar);
-        Button cdsRoteiro = (Button) findViewById(R.id.botaoRoteiro);
+        //Button cdsRoteiro = (Button) findViewById(R.id.botaoRoteiro);
 
         btCancelar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

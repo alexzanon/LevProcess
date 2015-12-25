@@ -24,6 +24,16 @@
         android:text="Novo Processo" />
 
     <Button
+        android:id="@+id/botaoNRoteiro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Novo Roteiro" />
+
+    <Button
         android:id="@+id/botaoVPModelados"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

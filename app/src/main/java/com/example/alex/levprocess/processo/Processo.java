@@ -25,7 +25,6 @@ public class Processo {
     public String entradas;
     public String saidas;
     public String roteiro;
-    public String validacao;
 
     public Processo() {
 

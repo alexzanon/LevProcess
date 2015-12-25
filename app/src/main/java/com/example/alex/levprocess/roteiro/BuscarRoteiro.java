@@ -43,7 +43,6 @@ public class BuscarRoteiro extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         EditText nome = (EditText) findViewById(R.id.etNomeRoteiro);
         EditText processo = (EditText) findViewById(R.id.etProcesso);
-        EditText atividade_condicao = (EditText) findViewById(R.id.etAtividade_Condicao);
 
         // Recupera o nome do roteiro
         String nomeRoteiro = nome.getText().toString();
@@ -53,12 +52,10 @@ public class BuscarRoteiro extends Activity implements View.OnClickListener {
             // Atualiza os campos com o resultado
             nome.setText(r.nome);
             processo.setText(r.processo);
-            atividade_condicao.setText(r.atividade_condicao);
         } else {
             // Limpa os campos
             nome.setText("");
             processo.setText("");
-            atividade_condicao.setText("");
 
             Toast.makeText(BuscarRoteiro.this, "Nenhum roteiro encontrado", Toast.LENGTH_SHORT).show();
         }

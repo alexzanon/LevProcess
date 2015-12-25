@@ -21,7 +21,6 @@ public class EditarRoteiro extends Activity {
     static final int RESULT_EXCLUIR = 2;
     private EditText campoNome;
     private EditText campoProcesso;
-    private EditText campoAtividade_Condicao;
         private Long id;
     private RepositorioRoteiro repositorio;
 
@@ -32,7 +31,6 @@ public class EditarRoteiro extends Activity {
         setContentView(R.layout.form_editar_roteiro);
         campoNome = (EditText) findViewById(R.id.campoNome);
         campoProcesso = (EditText) findViewById(R.id.campoProcesso);
-        campoAtividade_Condicao = (EditText) findViewById(R.id.campoAtividade_Condicao);
         id = null;
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
@@ -43,7 +41,6 @@ public class EditarRoteiro extends Activity {
                 Roteiro roteiro = buscarRoteiro(id);
                 campoNome.setText(roteiro.nome);
                 campoProcesso.setText(roteiro.processo);
-                campoAtividade_Condicao.setText(roteiro.atividade_condicao);
             }
         }
 
@@ -95,7 +92,6 @@ public class EditarRoteiro extends Activity {
         }
         roteiro.nome = campoNome.getText().toString();
         roteiro.processo = campoProcesso.getText().toString();
-        roteiro.atividade_condicao = campoAtividade_Condicao.getText().toString();
         salvarRoteiro(roteiro);// Salvar
         setResult(RESULT_OK, new Intent());	// OK
         // Fecha a tela

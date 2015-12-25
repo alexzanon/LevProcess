@@ -182,7 +182,6 @@ public class RepositorioRoteiro {
         ContentValues values = new ContentValues();
         values.put(Roteiros.NOME, roteiro.nome);
         values.put(Roteiros.PROCESSO, roteiro.processo);
-        values.put(Roteiros.ATIVIDADE_CONDICAO, roteiro.atividade_condicao);
         long id = inserir(values);
         return id;
     }
@@ -196,7 +195,6 @@ public class RepositorioRoteiro {
         ContentValues values = new ContentValues();
         values.put(Roteiros.NOME, roteiro.nome);
         values.put(Roteiros.PROCESSO, roteiro.processo);
-        values.put(Roteiros.ATIVIDADE_CONDICAO, roteiro.atividade_condicao);
         String _id = String.valueOf(roteiro.id);
         String where = Roteiros._ID + "=?";
         String[] whereArgs = new String[] { _id };
@@ -239,7 +237,6 @@ public class RepositorioRoteiro {
             roteiro.id = c.getLong(0);
             roteiro.nome = c.getString(1);
             roteiro.processo = c.getString(2);
-            roteiro.atividade_condicao = c.getString(3);
             return roteiro;
         }
         return null;
@@ -264,7 +261,6 @@ public class RepositorioRoteiro {
             int idxId = c.getColumnIndex(Roteiros._ID);
             int idxNome = c.getColumnIndex(Roteiros.NOME);
             int idxProcesso = c.getColumnIndex(Roteiros.PROCESSO);
-            int idxAtividade_Condicao = c.getColumnIndex(Roteiros.ATIVIDADE_CONDICAO);
             // Loop ate o final
             do {
                 Roteiro roteiro = new Roteiro();
@@ -273,7 +269,6 @@ public class RepositorioRoteiro {
                 roteiro.id = c.getLong(idxId);
                 roteiro.nome = c.getString(idxNome);
                 roteiro.processo = c.getString(idxProcesso);
-                roteiro.atividade_condicao = c.getString(idxAtividade_Condicao);
             } while (c.moveToNext());
         }
         return roteiros;
@@ -292,7 +287,6 @@ public class RepositorioRoteiro {
                 roteiro.id = c.getLong(0);
                 roteiro.nome = c.getString(1);
                 roteiro.processo = c.getString(2);
-                roteiro.atividade_condicao = c.getString(3);
             }
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar o roteiro pelo nome: " + e.toString());
