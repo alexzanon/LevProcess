@@ -13,8 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.atividade_condicao.CadastrarAtividade_Condicao;
 import com.example.alex.levprocess.cliente.MenuCliente;
 import com.example.alex.levprocess.modelador.MenuModelador;
+import com.example.alex.levprocess.usuario.CadastroUsuarios;
 import com.example.alex.levprocess.usuario.EditarUsuario;
 
 
@@ -81,13 +83,19 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         String senha = edtPassword.getText().toString();
         if (v.getId() == R.id.botaoLogar) {
             if (validateFields()) {
-                /**
-                 * Nesse ponto você poderia chamar um serviço de autenticação do usuário.
-                 * Por questões de simplicidade e entendimento emitiremos somente um alerta
-                 */
-                Toast.makeText(this, resources.getString(R.string.login_auth_ok), Toast.LENGTH_LONG).show();
-                Intent it = new Intent(LoginActivity.this, MenuCliente.class);
-                startActivityForResult(it, 1);
+                if (usuario.equals("alex") && senha.equals("123456")) {
+                    /**
+                     * Nesse ponto você poderia chamar um serviço de autenticação do usuário.
+                     * Por questões de simplicidade e entendimento emitiremos somente um alerta
+                     */
+                    Toast.makeText(this, resources.getString(R.string.login_auth_okm), Toast.LENGTH_LONG).show();
+                    Intent it = new Intent(LoginActivity.this, MenuModelador.class);
+                    startActivityForResult(it, 1);
+                } else {
+                    Toast.makeText(this, resources.getString(R.string.login_auth_okc), Toast.LENGTH_LONG).show();
+                    Intent it = new Intent(LoginActivity.this, MenuCliente.class);
+                    startActivityForResult(it, 1);
+                }
             }
         }
         if (v.getId() == R.id.botaoCadastrar) {

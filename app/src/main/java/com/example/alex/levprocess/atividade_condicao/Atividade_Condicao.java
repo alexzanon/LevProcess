@@ -7,14 +7,15 @@ import android.provider.BaseColumns;
 /**
  * Created by Alex on 08/12/2015.
  */
+
 public class Atividade_Condicao {
 
-    public static String[] colunas = new String[]{Atividade_Condicaos._ID, Atividade_Condicaos.NOME, Atividade_Condicaos.RESPONSAVEL, Atividade_Condicaos.DEPARTAMENTO, Atividade_Condicaos.TIPO, Atividade_Condicaos.DETALHAMENTO, Atividade_Condicaos.DOCUMENTO};
-
+    public static String[] colunas = new String[]{Atividade_Condicaos._ID, Atividade_Condicaos.NOME, Atividade_Condicaos.PROCESSO, Atividade_Condicaos.RESPONSAVEL, Atividade_Condicaos.DEPARTAMENTO, Atividade_Condicaos.TIPO, Atividade_Condicaos.DETALHAMENTO, Atividade_Condicaos.DOCUMENTO};
     public static final String AUTHORITY = "br.livro.android.provider.atividade_condicao";
 
     public long id;
     public String nome;
+    public String processo;
     public String responsavel;
     public String departamento;
     public String tipo;
@@ -25,9 +26,10 @@ public class Atividade_Condicao {
 
     }
 
-    public Atividade_Condicao(String nome, String responsavel, String departamento, String tipo, String detalhamento, String documento) {
+    public Atividade_Condicao(String nome, String processo, String responsavel, String departamento, String tipo, String detalhamento, String documento) {
         super();
         this.nome = nome;
+        this.processo = processo;
         this.responsavel = responsavel;
         this.departamento = departamento;
         this.tipo = tipo;
@@ -35,10 +37,11 @@ public class Atividade_Condicao {
         this.documento = documento;
     }
 
-    public Atividade_Condicao(long id, String nome, String tipo) {
+    public Atividade_Condicao(long id, String nome, String processo, String tipo) {
         super();
         this.id = id;
         this.nome = nome;
+        this.processo = processo;
         this.tipo = tipo;
     }
 
@@ -58,6 +61,7 @@ public class Atividade_Condicao {
         public static final String DEFAULT_SORT_ORDER = "_id ASC";
 
         public static final String NOME = "nome";
+        public static final String PROCESSO = "processo";
         public static final String RESPONSAVEL = "responsavel";
         public static final String DEPARTAMENTO = "departamento";
         public static final String TIPO = "tipo";
@@ -75,6 +79,6 @@ public class Atividade_Condicao {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", Responsável: " + responsavel + ", Departamento: " + departamento + ", Tipo: " + tipo + ", Detalhamento: " + detalhamento + ", Documento: " + documento;
+        return "Nome: " + nome + ", Processo: " + processo + ", Responsável: " + responsavel + ", Departamento: " + departamento + ", Tipo: " + tipo + ", Detalhamento: " + detalhamento + ", Documento: " + documento;
     }
 }

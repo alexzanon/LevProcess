@@ -9,14 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
+
+import org.w3c.dom.Text;
 
 /**
  * Buscar o Usuario.
  *
  */
+
 public class BuscarUsuario extends Activity implements View.OnClickListener {
     private RepositorioUsuario repositorio;
 
@@ -48,7 +52,7 @@ public class BuscarUsuario extends Activity implements View.OnClickListener {
         EditText dataNascimento = (EditText) findViewById(R.id.campoDataNascimento);
         EditText telefone = (EditText) findViewById(R.id.campoTelefone);
         EditText email = (EditText) findViewById(R.id.campoEmail);
-        EditText tipo = (EditText) findViewById(R.id.campoTipo);
+        TextView tipo = (TextView) findViewById(R.id.text8);
 
         // Recupera o nome do usuario
         String loginUsuario = login.getText().toString();

@@ -7,10 +7,20 @@ package com.example.alex.levprocess.atividade_condicao;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import com.example.alex.levprocess.R;
 import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao.Atividade_Condicaos;
@@ -20,12 +30,14 @@ public class EditarAtividade_Condicao extends Activity {
     static final int RESULT_SALVAR = 1;
     static final int RESULT_EXCLUIR = 2;
     private EditText campoNome;
+    private EditText campoNomeProcesso;
     private EditText campoResponsavel;
     private EditText campoDepartamento;
-    private EditText campoTipo;
+    private TextView campoTipo;
     private EditText campoDetalhamento;
     private EditText campoDocumento;
     private Long id;
+    private RadioButton rbatividade,rbcondicao;
     private RepositorioAtividade_Condicao repositorio;
 
     @Override
@@ -34,12 +46,27 @@ public class EditarAtividade_Condicao extends Activity {
         init();
         setContentView(R.layout.form_editar_atividade_condicao);
         campoNome = (EditText) findViewById(R.id.campoNomeAtividade);
+        campoNomeProcesso = (EditText) findViewById(R.id.campoNomeProcesso);
         campoResponsavel = (EditText) findViewById(R.id.campoResponsavel);
         campoDepartamento = (EditText) findViewById(R.id.campoDepartamento);
-        campoTipo = (EditText) findViewById(R.id.campoTipo);
+        campoTipo = (TextView) findViewById(R.id.text4);
+        rbatividade = (RadioButton) findViewById(R.id.RBAtividade);
+        rbcondicao = (RadioButton) findViewById(R.id.RBCondicao);
         campoDetalhamento = (EditText) findViewById(R.id.campoDetalhamento);
         campoDocumento = (EditText) findViewById(R.id.campoDocumento);
         id = null;
+
+        rbatividade.setOnClickListener(new RadioGroup.OnClickListener() {
+            public void onClick(View v) {
+                campoTipo.setText("Atividade");
+            }
+        });
+        rbcondicao.setOnClickListener(new RadioGroup.OnClickListener() {
+            public void onClick(View v) {
+                campoTipo.setText("Condicao");
+            }
+        });
+
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
         if (extras != null) {
@@ -48,6 +75,7 @@ public class EditarAtividade_Condicao extends Activity {
                 // e uma edicao, busca a atividade_condicao...
                 Atividade_Condicao atividade_condicao = buscarAtividade_Condicao(id);
                 campoNome.setText(atividade_condicao.nome);
+                campoNomeProcesso.setText(atividade_condicao.processo);
                 campoResponsavel.setText(atividade_condicao.responsavel);
                 campoDepartamento.setText(atividade_condicao.departamento);
                 campoTipo.setText(atividade_condicao.tipo);
@@ -103,6 +131,7 @@ public class EditarAtividade_Condicao extends Activity {
             atividade_condicao.id = id;// E uma atualizacao
         }
         atividade_condicao.nome = campoNome.getText().toString();
+        atividade_condicao.processo = campoNomeProcesso.getText().toString();
         atividade_condicao.responsavel = campoResponsavel.getText().toString();
         atividade_condicao.departamento = campoDepartamento.getText().toString();
         atividade_condicao.tipo = campoTipo.getText().toString();
@@ -132,7 +161,7 @@ public class EditarAtividade_Condicao extends Activity {
     // Salvar a atividade_condicao
     protected void salvarAtividade_Condicao(Atividade_Condicao atividade_condicao) {
         repositorio.salvar(atividade_condicao);
-        Toast.makeText(this, "Atividade_Condição cadastrado com sucesso", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Atividade_Condicao cadastrado com sucesso", Toast.LENGTH_LONG).show();
     }
 
     // Excluir a atividade_condicao

@@ -4,15 +4,13 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-import com.example.alex.levprocess.roteiro.Roteiro;
-
 /**
  * Created by Alex on 12/11/2015.
  */
 
 public class Processo {
 
-    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS, Processos.ROTEIRO};
+    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS, Processos.ROTEIRO, Processos.VALIDACAO };
 
     public static final String AUTHORITY = "br.livro.android.provider.processos";
 
@@ -25,12 +23,13 @@ public class Processo {
     public String entradas;
     public String saidas;
     public String roteiro;
+    public String validacao;
 
     public Processo() {
 
     }
 
-    public Processo(String nome, String responsavel, String papel, String objetivo, String condicao, String entradas, String saidas, String roteiro) {
+    public Processo(String nome, String responsavel, String papel, String objetivo, String condicao, String entradas, String saidas) {
         super();
         this.nome = nome;
         this.responsavel = responsavel;
@@ -39,7 +38,6 @@ public class Processo {
         this.condicao = condicao;
         this.entradas = entradas;
         this.saidas = saidas;
-        this.roteiro = roteiro;
     }
 
     public Processo(long id, String nome, String responsavel) {
@@ -72,6 +70,7 @@ public class Processo {
         public static final String ENTRADAS = "entradas";
         public static final String SAIDAS = "saidas";
         public static final String ROTEIRO = "roteiro";
+        public static final String VALIDACAO = "validacao";
 
         // Metodo que constroi uma Uri para um Processo especifico, com o seu id
         // A Uri e no formato "content://br.livro.android.provider.processo/processos/id"
@@ -84,6 +83,6 @@ public class Processo {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", Responsável: " + responsavel + ", Papel: " + papel + ", Objetivo: " + objetivo + ", Condição: " + condicao + ", Entradas: " + entradas + ", Saídas: " + saidas + ", Roteiro: " + roteiro;
+        return "Nome: " + nome + ", Responsável: " + responsavel + ", Papel: " + papel + ", Objetivo: " + objetivo + ", Condição: " + condicao + ", Entradas: " + entradas + ", Saídas: " + saidas;
     }
 }

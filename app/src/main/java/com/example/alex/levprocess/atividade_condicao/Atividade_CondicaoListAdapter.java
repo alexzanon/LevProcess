@@ -16,13 +16,6 @@ import android.widget.TextView;
 import com.example.alex.levprocess.R;
 import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao;
 
-/**
- * Adapter customizado que exibe o layout definido em smile_row.xml
- *
- * As imagens sao exibidas no widget ImageView
- *
- *
- */
 public class Atividade_CondicaoListAdapter extends BaseAdapter {
     private Context context;
     private List<Atividade_Condicao> lista;
@@ -41,8 +34,8 @@ public class Atividade_CondicaoListAdapter extends BaseAdapter {
         // Atualiza o valor do TextView
         TextView nome = (TextView) view.findViewById(R.id.etNomeAtividade_Condicao);
         nome.setText(a.nome);
-        TextView responsavel = (TextView) view.findViewById(R.id.etNResponsavel);
-        responsavel.setText(a.responsavel);
+        TextView tipo = (TextView) view.findViewById(R.id.etTipo);
+        tipo.setText(a.tipo);
         return view;
     }
 }

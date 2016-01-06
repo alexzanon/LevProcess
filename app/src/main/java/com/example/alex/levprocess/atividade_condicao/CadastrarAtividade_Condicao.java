@@ -98,7 +98,7 @@ public class CadastrarAtividade_Condicao extends ListActivity {
         // Quando a activity EditarAtividade_Condicao retornar, seja se foi para adicionar vamos atualizar a lista
         if (codigoRetorno == RESULT_OK) {
             // atualiza a lista na tela
-            //atualizarLista();
+            atualizarLista();
         }
     }
 
@@ -109,4 +109,3 @@ public class CadastrarAtividade_Condicao extends ListActivity {
         repositorio.fechar();
     }
 }
-

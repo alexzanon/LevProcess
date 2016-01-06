@@ -20,10 +20,12 @@ import com.example.alex.levprocess.R;
  * Buscar o Processo.
  *
  */
+
 public class BuscarProcesso extends Activity implements View.OnClickListener {
 
     private RepositorioProcesso repositorio;
     protected static final int VOLTAR = 3;
+
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -64,6 +66,7 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
         // Fecha a tela
         finish();
     }
+
     public void onClick(View view) {
         EditText nome = (EditText) findViewById(R.id.etNomeProcesso);
         EditText responsavel = (EditText) findViewById(R.id.etResponsavel);
@@ -71,8 +74,8 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
         EditText objetivo = (EditText) findViewById(R.id.etObjetivo);
         EditText entradas = (EditText) findViewById(R.id.etEntradas);
         EditText saidas = (EditText) findViewById(R.id.etSaidas);
-        EditText roteiro = (EditText) findViewById(R.id.etRoteiro);
-        EditText validacao = (EditText) findViewById(R.id.etValidacao);
+        //EditText roteiro = (EditText) findViewById(R.id.etRoteiro);
+        //EditText validacao = (EditText) findViewById(R.id.etValidacao);
 
         // Recupera o nome do processo
         String nomeProcesso = nome.getText().toString();
@@ -86,7 +89,7 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
             objetivo.setText(processo.objetivo);
             entradas.setText(processo.entradas);
             saidas.setText(processo.saidas);
-            roteiro.setText(processo.roteiro);
+            //roteiro.setText(processo.roteiro);
         } else {
             // Limpa os campos
             nome.setText("");
@@ -95,7 +98,7 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
             objetivo.setText("");
             entradas.setText("");
             saidas.setText("");
-            roteiro.setText("");
+            //roteiro.setText("");
 
             Toast.makeText(BuscarProcesso.this, "Nenhum processo encontrado", Toast.LENGTH_SHORT).show();
         }

@@ -4,30 +4,14 @@
     android:background="#E8E8E8" >
 
     <TableRow>
-        <TextView android:id="@+id/etNAtividade_Condicao"
-            android:layout_height="wrap_content" android:layout_width="wrap_content"
-            android:typeface="sans"
-            android:layout_marginTop="10dp"
-            android:text="NOME DA ATIVIDADE_CONDICAO"
-            />
-        <TextView android:id="@+id/etNomeResponsavel"
-            android:layout_height="wrap_content" android:layout_width="wrap_content"
-            android:typeface="sans"
-            android:layout_marginTop="10dp"
-            android:text="NOME DO RESPONSÁVEL"
-            android:layout_marginLeft="50dp"
-            />
-    </TableRow>
-
-    <TableRow>
         <TextView android:id="@+id/etNomeAtividade_Condicao"
             android:layout_height="wrap_content" android:layout_width="wrap_content"
             android:typeface="sans"
             />
-        <TextView android:id="@+id/etNResponsavel"
+        <TextView android:id="@+id/etTipo"
             android:layout_height="wrap_content" android:layout_width="wrap_content"
             android:typeface="sans"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="20dp"
             />
     </TableRow>
 </TableLayout>

@@ -23,22 +23,6 @@ import java.util.List;
 
 import com.example.alex.levprocess.usuario.Usuario.Usuarios;
 
-/**
- * <pre>
- * Repositorio para usuarios que utiliza o SQLite internamente
- *
- * Para visualizar o banco pelo adb shell:
- *
- * &gt;&gt; sqlite3 /data/data/br.livro.android.exemplos.banco/databases/BancoUsuario
- *
- * &gt;&gt; Mais info dos comandos em: http://www.sqlite.org/sqlite.html
- *
- * &gt;&gt; .exit para sair
- *
- * </pre>
- *
- *
- */
 public class RepositorioUsuario {
     private static final String CATEGORIA = "levProcess";
     // Nome do banco
@@ -51,11 +35,6 @@ public class RepositorioUsuario {
     public static final String NOME_TABELA = "usuario";
     protected SQLiteDatabase db;
 
-
-
-    /**
-     * Creates a empty database on the system and rewrites it with your own database.
-     * */
     public void createDataBase() throws IOException{
         // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
@@ -89,11 +68,6 @@ public class RepositorioUsuario {
         return checkDB != null ? true : false;
     }
 
-    /**
-     * Copies your database from your local assets-folder to the just created empty database in the
-     * system folder, from where it can be accessed and handled.
-     * This is done by transfering bytestream.
-     * */
     private void copyDataBase(String assetfile,String DB) {
 
         //Open your local db as the input stream

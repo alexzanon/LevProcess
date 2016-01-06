@@ -24,39 +24,19 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
 
-/**
- * <pre>
- * Repositorio para atividade_condicaos que utiliza o SQLite internamente
- *
- * Para visualizar o banco pelo adb shell:
- *
- * &gt;&gt; sqlite3 /data/data/br.livro.android.exemplos.banco/databases/BancoAtividade_Condicaos
- *
- * &gt;&gt; Mais info dos comandos em: http://www.sqlite.org/sqlite.html
- *
- * &gt;&gt; .exit para sair
- *
- * </pre>
- *
- *
- */
 public class RepositorioAtividade_Condicao {
     private static final String CATEGORIA = "levprocess";
     // Nome do banco
     private static final String NOME_BANCO = "lev";
     private static final String NOME_BANCO_CPY = "lev";
     private Context myCtx;
-    public static String DB_PATH = "/data/data/com.example.alex.levprocess/databases/";
+    public static String DB_PATH = "/data/data/cap8.android.aula.br.testelev/databases/";
 
     // Nome da tabela
     public static final String NOME_TABELA = "atividade_condicao";
     protected SQLiteDatabase db;
 
 
-
-    /**
-     * Creates a empty database on the system and rewrites it with your own database.
-     * */
     public void createDataBase() throws IOException{
         // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
@@ -69,10 +49,7 @@ public class RepositorioAtividade_Condicao {
         }
     }
 
-    /**
-     * Check if the database already exist to avoid re-copying the file each time you open the application.
-     * @return true if it exists, false if it doesn't
-     */
+
     private boolean checkDataBase(String DB){
         SQLiteDatabase checkDB = null;
         try{
@@ -90,11 +67,7 @@ public class RepositorioAtividade_Condicao {
         return checkDB != null ? true : false;
     }
 
-    /**
-     * Copies your database from your local assets-folder to the just created empty database in the
-     * system folder, from where it can be accessed and handled.
-     * This is done by transfering bytestream.
-     * */
+
     private void copyDataBase(String assetfile,String DB) {
 
         //Open your local db as the input stream
@@ -182,6 +155,7 @@ public class RepositorioAtividade_Condicao {
     public long inserir(Atividade_Condicao atividade_condicao) {
         ContentValues values = new ContentValues();
         values.put(Atividade_Condicaos.NOME, atividade_condicao.nome);
+        values.put(Atividade_Condicaos.PROCESSO, atividade_condicao.processo);
         values.put(Atividade_Condicaos.RESPONSAVEL, atividade_condicao.responsavel);
         values.put(Atividade_Condicaos.DEPARTAMENTO, atividade_condicao.departamento);
         values.put(Atividade_Condicaos.TIPO, atividade_condicao.tipo);
@@ -199,6 +173,7 @@ public class RepositorioAtividade_Condicao {
     public int atualizar(Atividade_Condicao atividade_condicao) {
         ContentValues values = new ContentValues();
         values.put(Atividade_Condicaos.NOME, atividade_condicao.nome);
+        values.put(Atividade_Condicaos.PROCESSO, atividade_condicao.processo);
         values.put(Atividade_Condicaos.RESPONSAVEL, atividade_condicao.responsavel);
         values.put(Atividade_Condicaos.DEPARTAMENTO, atividade_condicao.departamento);
         values.put(Atividade_Condicaos.TIPO, atividade_condicao.tipo);
@@ -245,11 +220,12 @@ public class RepositorioAtividade_Condicao {
             // Le os dados
             atividade_condicao.id = c.getLong(0);
             atividade_condicao.nome = c.getString(1);
-            atividade_condicao.responsavel = c.getString(2);
-            atividade_condicao.departamento = c.getString(3);
-            atividade_condicao.tipo = c.getString(4);
-            atividade_condicao.detalhamento = c.getString(5);
-            atividade_condicao.documento = c.getString(6);
+            atividade_condicao.processo = c.getString(2);
+            atividade_condicao.responsavel = c.getString(3);
+            atividade_condicao.departamento = c.getString(4);
+            atividade_condicao.tipo = c.getString(5);
+            atividade_condicao.detalhamento = c.getString(6);
+            atividade_condicao.documento = c.getString(7);
             return atividade_condicao;
         }
         return null;
@@ -273,6 +249,7 @@ public class RepositorioAtividade_Condicao {
             // Recupera os indices das colunas
             int idxId = c.getColumnIndex(Atividade_Condicaos._ID);
             int idxNome = c.getColumnIndex(Atividade_Condicaos.NOME);
+            int idxProcesso = c.getColumnIndex(Atividade_Condicaos.PROCESSO);
             int idxResponsavel = c.getColumnIndex(Atividade_Condicaos.RESPONSAVEL);
             int idxDepartamento = c.getColumnIndex(Atividade_Condicaos.DEPARTAMENTO);
             int idxTipo = c.getColumnIndex(Atividade_Condicaos.TIPO);
@@ -285,6 +262,7 @@ public class RepositorioAtividade_Condicao {
                 // recupera os atributos da atividade_condicao
                 atividade_condicao.id = c.getLong(idxId);
                 atividade_condicao.nome = c.getString(idxNome);
+                atividade_condicao.processo = c.getString(idxProcesso);
                 atividade_condicao.responsavel = c.getString(idxResponsavel);
                 atividade_condicao.departamento = c.getString(idxDetalhamento);
                 atividade_condicao.tipo = c.getString(idxTipo);
@@ -307,11 +285,12 @@ public class RepositorioAtividade_Condicao {
                 // utiliza os metodos getLong(), getString(), getString(), etc para recuperar os valores
                 atividade_condicao.id = c.getLong(0);
                 atividade_condicao.nome = c.getString(1);
-                atividade_condicao.responsavel = c.getString(2);
-                atividade_condicao.departamento = c.getString(3);
-                atividade_condicao.tipo = c.getString(4);
-                atividade_condicao.detalhamento = c.getString(5);
-                atividade_condicao.documento = c.getString(6);
+                atividade_condicao.processo = c.getString(2);
+                atividade_condicao.responsavel = c.getString(3);
+                atividade_condicao.departamento = c.getString(4);
+                atividade_condicao.tipo = c.getString(5);
+                atividade_condicao.detalhamento = c.getString(6);
+                atividade_condicao.documento = c.getString(7);
             }
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar a atividade_condicao pelo nome: " + e.toString());

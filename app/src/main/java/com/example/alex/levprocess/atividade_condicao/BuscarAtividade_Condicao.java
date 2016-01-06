@@ -5,7 +5,10 @@ package com.example.alex.levprocess.atividade_condicao;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,7 +20,10 @@ import com.example.alex.levprocess.R;
  * Buscar a Atividade_Condicao.
  *
  */
+
 public class BuscarAtividade_Condicao extends Activity implements View.OnClickListener {
+
+    protected static final int VOLTAR = 1;
     private RepositorioAtividade_Condicao repositorio;
 
     @Override
@@ -32,6 +38,24 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
     public void init() {
         repositorio = new RepositorioAtividade_Condicao(this);
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        menu.add(0, VOLTAR, 0, "Voltar").setIcon(R.drawable.limpar);
+        return true;
+    }
+
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        // Clicou no menu
+        switch (item.getItemId()) {
+            case VOLTAR:
+                // Abre a tela listando as atividades condições existentes
+                startActivity(new Intent(this, CadastrarAtividade_Condicao.class));
+                break;
+        }
+        return true;
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -41,7 +65,8 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         finish();
     }
     public void onClick(View view) {
-        EditText nome = (EditText) findViewById(R.id.etNomeRoteiro);
+        EditText nome = (EditText) findViewById(R.id.etNomeAtividade);
+        EditText processo = (EditText) findViewById(R.id.etNomeProcesso);
         EditText responsavel = (EditText) findViewById(R.id.etResponsavel);
         EditText departamento = (EditText) findViewById(R.id.etDepartamento);
         EditText tipo = (EditText) findViewById(R.id.etTipo);
@@ -55,6 +80,7 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         if (a != null) {
             // Atualiza os campos com o resultado
             nome.setText(a.nome);
+            processo.setText(a.processo);
             responsavel.setText(a.responsavel);
             departamento.setText(a.departamento);
             tipo.setText(a.tipo);
@@ -63,13 +89,14 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         } else {
             // Limpa os campos
             nome.setText("");
+            processo.setText("");
             responsavel.setText("");
             departamento.setText("");
             tipo.setText("");
             detalhamento.setText("");
             documento.setText("");
 
-            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma atividade_condicao encontrado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma atividade condicao encontrada", Toast.LENGTH_SHORT).show();
         }
     }
     // Busca uma atividade_condicao pelo nome

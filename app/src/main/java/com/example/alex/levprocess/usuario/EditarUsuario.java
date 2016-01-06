@@ -10,10 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
 import com.example.alex.levprocess.usuario.Usuario.Usuarios;
+
+import org.w3c.dom.Text;
 
 public class EditarUsuario extends Activity {
 
@@ -26,7 +31,8 @@ public class EditarUsuario extends Activity {
     private EditText campoDataNascimento;
     private EditText campoTelefone;
     private EditText campoEmail;
-    private EditText campoTipo;
+    private TextView campoTipo;
+    private RadioButton rbcliente, rbmodelador, rbadministrador;
     private Long id;
     private RepositorioUsuario repositorio;
 
@@ -42,8 +48,28 @@ public class EditarUsuario extends Activity {
         campoDataNascimento = (EditText) findViewById(R.id.campoDataNascimento);
         campoTelefone = (EditText) findViewById(R.id.campoTelefone);
         campoEmail = (EditText) findViewById(R.id.campoEmail);
-        campoTipo = (EditText) findViewById(R.id.campoTipo);
+        campoTipo = (TextView) findViewById(R.id.text8);
+        rbcliente = (RadioButton) findViewById(R.id.RBCliente);
+        rbmodelador = (RadioButton) findViewById(R.id.RBModelador);
+        rbadministrador = (RadioButton) findViewById(R.id.RBAdministrador);
         id = null;
+
+        rbcliente.setOnClickListener(new RadioGroup.OnClickListener() {
+            public void onClick(View v) {
+                campoTipo.setText("Cliente");
+            }
+        });
+        rbmodelador.setOnClickListener(new RadioGroup.OnClickListener() {
+            public void onClick(View v) {
+                campoTipo.setText("Modelador");
+            }
+        });
+        rbadministrador.setOnClickListener(new RadioGroup.OnClickListener() {
+            public void onClick(View v) {
+                campoTipo.setText("Administrador");
+            }
+        });
+
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
         if (extras != null) {

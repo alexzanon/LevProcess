@@ -34,7 +34,7 @@ public class EditarProcesso extends Activity {
         condicao = (EditText) findViewById(R.id.etCondicao);
         entradas = (EditText) findViewById(R.id.etEntradas);
         saidas = (EditText) findViewById(R.id.etSaidas);
-        roteiro = (EditText) findViewById(R.id.etRoteiro);
+        //roteiro = (EditText) findViewById(R.id.etRoteiro);
         //validacao = (EditText) findViewById(R.id.etValidacao);
         id = null;
         Bundle extras = getIntent().getExtras();
@@ -51,7 +51,7 @@ public class EditarProcesso extends Activity {
                 condicao.setText(c.condicao);
                 entradas.setText(c.entradas);
                 saidas.setText(c.saidas);
-                roteiro.setText(c.roteiro);
+                //roteiro.setText(c.roteiro);
                 //validacao.setText(c.validacao);
             }
         }
@@ -109,7 +109,7 @@ public class EditarProcesso extends Activity {
         processo.condicao = condicao.getText().toString();
         processo.entradas = entradas.getText().toString();
         processo.saidas = saidas.getText().toString();
-        processo.roteiro = roteiro.getText().toString();
+        //processo.roteiro = roteiro.getText().toString();
         //processo.validacao = validacao.getText().toString();
         salvarProcesso(processo);// Salvar
         setResult(RESULT_OK, new Intent());	// OK

@@ -9,8 +9,12 @@
             android:id="@+id/introducao"
             android:text="Todos os campos são obrigatórios" />
         <TableRow>
-            <TextView android:id="@+id/text1" android:text="Nome da Atividade Condição:"	android:textColor="#000000" />
+            <TextView android:id="@+id/text1" android:text="Nome:"	android:textColor="#000000" />
             <EditText android:id="@+id/campoNomeAtividade" android:width="240px" />
+        </TableRow>
+        <TableRow>
+            <TextView android:id="@+id/process" android:text="Processo:"	android:textColor="#000000" />
+            <EditText android:id="@+id/campoNomeProcesso" android:width="240px" />
         </TableRow>
         <TableRow>
             <TextView android:id="@+id/text2" android:text="Responsável:" 	android:textColor="#000000" />
@@ -22,7 +26,22 @@
         </TableRow>
         <TableRow>
             <TextView android:id="@+id/text4" android:text="Tipo:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoTipo"  />
+            <RadioGroup android:id="@+id/rdGroup1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <RadioButton
+                    android:id="@+id/RBAtividade"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Atividade" />
+                <RadioButton
+                    android:id="@+id/RBCondicao"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Condicao" />
+
+            </RadioGroup>
         </TableRow>
         <TableRow>
             <TextView android:id="@+id/text5" android:text="Detalhamento:" 	android:textColor="#000000" />

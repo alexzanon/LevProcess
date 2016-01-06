@@ -35,7 +35,7 @@ public class DadosProcesso extends Activity {
         condicao = (TextView) findViewById(R.id.tvCondicao);
         entradas = (TextView) findViewById(R.id.tvEntradas);
         saidas = (TextView) findViewById(R.id.tvSaidas);
-        roteiro = (TextView) findViewById(R.id.tvRoteiro);
+        //roteiro = (TextView) findViewById(R.id.tvRoteiro);
         //validacao = (TextView) findViewById(R.id.tvValidacao);
         id = null;
         Bundle extras = getIntent().getExtras();
@@ -52,7 +52,7 @@ public class DadosProcesso extends Activity {
                 condicao.setText(c.condicao);
                 entradas.setText(c.entradas);
                 saidas.setText(c.saidas);
-                roteiro.setText(c.roteiro);
+                //roteiro.setText(c.roteiro);
                 //validacao.setText(c.validacao);
             }
         }
@@ -111,7 +111,7 @@ public class DadosProcesso extends Activity {
         processo.condicao = condicao.getText().toString();
         processo.entradas = entradas.getText().toString();
         processo.saidas = saidas.getText().toString();
-        processo.roteiro = roteiro.getText().toString();
+        //processo.roteiro = roteiro.getText().toString();
         //processo.validacao = validacao.getText().toString();
         salvarProcesso(processo);// Salvar
         setResult(RESULT_OK, new Intent());	// OK

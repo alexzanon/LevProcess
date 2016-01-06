@@ -23,22 +23,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
 
-/**
- * <pre>
- * Repositorio para processos que utiliza o SQLite internamente
- *
- * Para visualizar o banco pelo adb shell:
- *
- * &gt;&gt; sqlite3 /data/data/br.livro.android.exemplos.banco/databases/BancoProcessos
- *
- * &gt;&gt; Mais info dos comandos em: http://www.sqlite.org/sqlite.html
- *
- * &gt;&gt; .exit para sair
- *
- * </pre>
- *
- *
- */
 public class RepositorioProcesso {
     private static final String CATEGORIA = "levprocess";
     // Nome do banco
@@ -51,11 +35,6 @@ public class RepositorioProcesso {
     public static final String NOME_TABELA = "processo";
     protected SQLiteDatabase db;
 
-
-
-    /**
-     * Creates a empty database on the system and rewrites it with your own database.
-     * */
     public void createDataBase() throws IOException{
         // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
@@ -68,10 +47,6 @@ public class RepositorioProcesso {
         }
     }
 
-    /**
-     * Check if the database already exist to avoid re-copying the file each time you open the application.
-     * @return true if it exists, false if it doesn't
-     */
     private boolean checkDataBase(String DB){
         SQLiteDatabase checkDB = null;
         try{
@@ -89,11 +64,6 @@ public class RepositorioProcesso {
         return checkDB != null ? true : false;
     }
 
-    /**
-     * Copies your database from your local assets-folder to the just created empty database in the
-     * system folder, from where it can be accessed and handled.
-     * This is done by transfering bytestream.
-     * */
     private void copyDataBase(String assetfile,String DB) {
 
         //Open your local db as the input stream
@@ -187,7 +157,6 @@ public class RepositorioProcesso {
         values.put(Processos.CONDICAO, processo.condicao);
         values.put(Processos.ENTRADAS, processo.entradas);
         values.put(Processos.SAIDAS, processo.saidas);
-        values.put(Processos.ROTEIRO, processo.roteiro);
         long id = inserir(values);
         return id;
     }
@@ -206,7 +175,7 @@ public class RepositorioProcesso {
         values.put(Processos.CONDICAO, processo.condicao);
         values.put(Processos.ENTRADAS, processo.entradas);
         values.put(Processos.SAIDAS, processo.saidas);
-        values.put(Processos.ROTEIRO, processo.roteiro);
+        //values.put(Processos.ROTEIRO, processo.roteiro);
         String _id = String.valueOf(processo.id);
         String where = Processos._ID + "=?";
         String[] whereArgs = new String[] { _id };
@@ -254,7 +223,7 @@ public class RepositorioProcesso {
             processo.condicao = c.getString(5);
             processo.entradas = c.getString(6);
             processo.saidas = c.getString(7);
-            processo.roteiro = c.getString(8);
+            //processo.roteiro = c.getString(8);
             return processo;
         }
         return null;
@@ -310,7 +279,7 @@ public class RepositorioProcesso {
                 processo.condicao = c.getString(5);
                 processo.entradas = c.getString(6);
                 processo.saidas = c.getString(7);
-                processo.roteiro = c.getString(8);
+                //processo.roteiro = c.getString(8);
             }
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar o processo pelo nome: " + e.toString());

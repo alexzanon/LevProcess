@@ -15,13 +15,6 @@ import android.widget.TextView;
 
 import com.example.alex.levprocess.R;
 
-/**
- * Adapter customizado que exibe o layout definido em smile_row.xml
- *
- * As imagens sao exibidas no widget ImageView
- *
- *
- */
 public class ProcessoListAdapter extends BaseAdapter {
     private Context context;
     private List<Processo> lista;
