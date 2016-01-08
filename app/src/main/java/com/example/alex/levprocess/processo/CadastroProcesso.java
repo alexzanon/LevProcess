@@ -59,7 +59,7 @@ public class CadastroProcesso extends ListActivity {
         switch (item.getItemId()) {
             case INSERIR_EDITAR:
                 // Abre a tela com o formulario para adicionar
-                startActivityForResult(new Intent(this, DadosProcesso.class), INSERIR_EDITAR);
+                startActivityForResult(new Intent(this, NovoProcesso.class), INSERIR_EDITAR);
                 break;
             case BUSCAR:
                 // Abre a tela para buscar o processo pelo nome

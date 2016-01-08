@@ -16,7 +16,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".cliente.MenuCliente" >
+            android:name=".cliente.MenuCliente"
+            android:label="@string/title_activity_menu_cliente" >
         </activity>
         <activity
             android:name=".login.LoginActivity"
@@ -27,7 +28,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".modelador.MenuModelador" >
+            android:name=".modelador.MenuModelador"
+            android:label="@string/title_activity_menu_modelador" >
         </activity>
         <activity
             android:name=".processo.CadastroProcesso" >
@@ -39,7 +41,8 @@
             android:name=".processo.EditarProcesso" >
         </activity>
         <activity
-            android:name=".processo.NovoProcesso" >
+            android:name=".processo.NovoProcesso"
+            android:label="@string/title_activity_novo_processo" >
         </activity>
         <activity
             android:name=".processo.BuscarProcesso" >
@@ -60,7 +63,12 @@
             android:name=".atividade_condicao.EditarAtividade_Condicao" >
         </activity>
         <activity
-            android:name=".atividade_condicao.BuscarAtividade_Condicao" >
+            android:name=".atividade_condicao.BuscarAtividade_Condicao"
+            android:label="@string/title_activity_buscar_atividade_condicao">
+        </activity>
+        <activity
+            android:name=".atividade_condicao.NovaAtividade_Condicao"
+            android:label="@string/title_activity_nova_atividade_condicao" >
         </activity>
     </application>
 

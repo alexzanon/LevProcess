@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -12,71 +11,86 @@
         <TextView android:id="@+id/text1"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Nome Processo:"
+            android:text="Nome:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etNomeProcesso"
+        <EditText android:id="@+id/campoNomeAtividade"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:width="240px" />
 
+        <TextView android:id="@+id/process"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Selecionar o Processo:"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:prompt="@string/spinner_nome"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
         <TextView android:id="@+id/text2"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Responsável pelo Processo:"
+            android:text="Responsável:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etResponsavel"
+        <EditText android:id="@+id/campoResponsavel"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent" />
 
         <TextView android:id="@+id/text3"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Papel do Responsável:"
+            android:text="Departamento:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etPapel"
+        <EditText android:id="@+id/campoDepartamento"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent" />
 
         <TextView android:id="@+id/text4"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Objetivo do Processo:"
+            android:text="Tipo:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etObjetivo"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent" />
+        <RadioGroup android:id="@+id/rdGroup1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/RBAtividade"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Atividade" />
+            <RadioButton
+                android:id="@+id/RBCondicao"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Condicao" />
+        </RadioGroup>
 
         <TextView android:id="@+id/text5"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Condição Inicial do Processo:"
+            android:text="Detalhamento:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etCondicao"
+        <EditText android:id="@+id/campoDetalhamento"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent" />
 
         <TextView android:id="@+id/text6"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Entradas do Processo:"
+            android:text="Documento:"
             android:textColor="#000000" />
 
-        <EditText android:id="@+id/etEntradas"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent" />
-
-        <TextView android:id="@+id/text7"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:text="Saídas do Processo:"
-            android:textColor="#000000" />
-
-        <EditText android:id="@+id/etSaidas"
+        <EditText android:id="@+id/campoDocumento"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent" />
 
@@ -89,5 +103,6 @@
             android:text="Cancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 </ScrollView>

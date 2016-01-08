@@ -4,83 +4,43 @@
     android:layout_height="match_parent" android:background="#DCDCDC">
 
     <Button
-        android:id="@+id/botaoConf"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#F8F8FF"
-        android:textStyle="bold"
-        android:textColor="#696969"
-        android:text="CONF" />
-
-    <Button
         android:id="@+id/botaoNProcesso"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="60dip"
         android:background="@drawable/screen_border"
         android:textStyle="bold"
         android:textColor="#696969"
         android:text="Novo Processo" />
 
     <Button
-        android:id="@+id/botaoVPModelados"
+        android:id="@+id/botaoCAtividade_Condicao"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dip"
         android:background="@drawable/screen_border"
         android:textStyle="bold"
         android:textColor="#696969"
-        android:text="Validar Processos Modelados" />
+        android:text="Cadastrar Atividade/Condicao" />
 
     <Button
-        android:id="@+id/botaoDPendentes"
+        android:id="@+id/botaoVRProcesso"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dip"
         android:background="@drawable/screen_border"
         android:textStyle="bold"
         android:textColor="#696969"
-        android:text="Dúvidas Pendentes" />
+        android:text="Verificar Roteiro Processo" />
 
     <Button
-        android:id="@+id/botaoAPModelados"
+        android:id="@+id/botaoLogoff"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
-        android:background="@drawable/screen_border"
+        android:layout_marginTop="60dip"
         android:textStyle="bold"
-        android:textColor="#696969"
-        android:text="Alterar Processos Modelados" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dip" >
-
-        <Button
-            android:id="@+id/botaoLogoff"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dip"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#1E90FF"
-            android:textColor="#F8F8FF"
-            android:text="Logoff" />
-
-        <Button
-            android:id="@+id/botaoSinc"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dip"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#1E90FF"
-            android:textColor="#F8F8FF"
-            android:text="Sinc" />
-
-    </LinearLayout>
+        android:background="#1E90FF"
+        android:textColor="#F8F8FF"
+        android:text="Logoff" />
 
 </LinearLayout>

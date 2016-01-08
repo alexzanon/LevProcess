@@ -1,40 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent" android:layout_width="fill_parent"
-    android:background="#ffffff">
-    <TableRow>
-        <TextView android:id="@+id/text1" android:text="Nome Atividade Condição:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etNomeAtividade" android:width="240px" />
-    </TableRow>
-    <TableRow>
-        <ImageButton android:src="@drawable/pesquisar"
-            android:id="@+id/btBuscar" android:text="Buscar" />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text2" android:text="Responsável:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etResponsavel"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text3" android:text="Departamento:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etDepartamento"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text4" android:text="Tipo:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etTipo"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text5" android:text="Detalhamento:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etDetalhamento"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text6" android:text="Documento:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/etDocumento"  />
-    </TableRow>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
-</TableLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/process"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Nome do Processo:"
+            android:textColor="#000000" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/etNome_processo"/>
+
+        <ImageButton android:src="@drawable/pesquisar"
+            android:id="@+id/btBuscar"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Buscar" />
+
+        <TextView android:id="@+id/text1"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Nome Atividade/Condição:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/etNomeAtividade"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:width="240px" />
+
+        <TextView android:id="@+id/text2"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Responsável:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/etResponsavel"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text3"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Departamento:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/etDepartamento"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text4"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Tipo:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/etTipo"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text5"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Detalhamento:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/etDetalhamento"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text6"
+            android:text="Documento:"
+            android:textColor="#000000"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <EditText android:id="@+id/etDocumento"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+    </LinearLayout>
+</ScrollView>

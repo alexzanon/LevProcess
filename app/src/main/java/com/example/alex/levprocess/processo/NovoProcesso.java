@@ -6,12 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
-import com.example.alex.levprocess.atividade_condicao.CadastrarAtividade_Condicao;
-import com.example.alex.levprocess.atividade_condicao.EditarAtividade_Condicao;
 
 /**
  * Created by Alex on 28/11/2015.
@@ -33,27 +30,20 @@ public class NovoProcesso extends Activity {
         condicao = (EditText) findViewById(R.id.etCondicao);
         entradas = (EditText) findViewById(R.id.etEntradas);
         saidas = (EditText) findViewById(R.id.etSaidas);
-        //roteiro = (EditText) findViewById(R.id.etRoteiro);
         id = null;
 
-        Button btRoteiro = (Button) findViewById(R.id.cadastrarRoteiro);
-        btRoteiro.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent it = new Intent(NovoProcesso.this, CadastrarAtividade_Condicao.class);
-                startActivityForResult(it, 2);
-            }
-        });
-
-        ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
+        Button btSalvar = (Button) findViewById(R.id.btSalvar);
         btSalvar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                salvar();
+                if (nome.getText().toString().equals("")) {
+                    Toast.makeText(NovoProcesso.this, "Favor cadastrar ao menos um nome para o processo", Toast.LENGTH_LONG).show();
+                } else {
+                    salvar();
+                }
             }
         });
 
-        ImageButton btCancelar = (ImageButton) findViewById(R.id.btCancelar);
-        //Button cdsRoteiro = (Button) findViewById(R.id.botaoRoteiro);
-
+        Button btCancelar = (Button) findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
@@ -87,10 +77,10 @@ public class NovoProcesso extends Activity {
         processo.condicao = condicao.getText().toString();
         processo.entradas = entradas.getText().toString();
         processo.saidas = saidas.getText().toString();
-        //processo.roteiro = roteiro.getText().toString();
         salvarProcesso(processo);// Salvar
+
         setResult(RESULT_OK, new Intent());	// OK
-        Toast.makeText(NovoProcesso.this, "Processo Gravado, Favor Cadastrar Roteiro!", Toast.LENGTH_LONG).show();
+        Toast.makeText(NovoProcesso.this, "ID:" + repositorio.processoAtual().id + "Processo Gravado com Sucesso", Toast.LENGTH_LONG).show();
         // Fecha a tela
         //finish();
     }
@@ -99,3 +89,4 @@ public class NovoProcesso extends Activity {
         repositorio.salvar(processo);
     }
 }
+

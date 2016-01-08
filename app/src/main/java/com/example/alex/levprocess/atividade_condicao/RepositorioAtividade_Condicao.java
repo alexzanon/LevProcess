@@ -30,7 +30,7 @@ public class RepositorioAtividade_Condicao {
     private static final String NOME_BANCO = "lev";
     private static final String NOME_BANCO_CPY = "lev";
     private Context myCtx;
-    public static String DB_PATH = "/data/data/cap8.android.aula.br.testelev/databases/";
+    public static String DB_PATH = "/data/data/com.example.alex.levprocess/databases/";
 
     // Nome da tabela
     public static final String NOME_TABELA = "atividade_condicao";
@@ -155,12 +155,13 @@ public class RepositorioAtividade_Condicao {
     public long inserir(Atividade_Condicao atividade_condicao) {
         ContentValues values = new ContentValues();
         values.put(Atividade_Condicaos.NOME, atividade_condicao.nome);
-        values.put(Atividade_Condicaos.PROCESSO, atividade_condicao.processo);
+        values.put(Atividade_Condicaos.NOME_PROCESSO, atividade_condicao.nome_processo);
         values.put(Atividade_Condicaos.RESPONSAVEL, atividade_condicao.responsavel);
         values.put(Atividade_Condicaos.DEPARTAMENTO, atividade_condicao.departamento);
         values.put(Atividade_Condicaos.TIPO, atividade_condicao.tipo);
         values.put(Atividade_Condicaos.DETALHAMENTO, atividade_condicao.detalhamento);
         values.put(Atividade_Condicaos.DOCUMENTO, atividade_condicao.documento);
+
         long id = inserir(values);
         return id;
     }
@@ -173,7 +174,7 @@ public class RepositorioAtividade_Condicao {
     public int atualizar(Atividade_Condicao atividade_condicao) {
         ContentValues values = new ContentValues();
         values.put(Atividade_Condicaos.NOME, atividade_condicao.nome);
-        values.put(Atividade_Condicaos.PROCESSO, atividade_condicao.processo);
+        values.put(Atividade_Condicaos.NOME_PROCESSO, atividade_condicao.nome_processo);
         values.put(Atividade_Condicaos.RESPONSAVEL, atividade_condicao.responsavel);
         values.put(Atividade_Condicaos.DEPARTAMENTO, atividade_condicao.departamento);
         values.put(Atividade_Condicaos.TIPO, atividade_condicao.tipo);
@@ -220,7 +221,7 @@ public class RepositorioAtividade_Condicao {
             // Le os dados
             atividade_condicao.id = c.getLong(0);
             atividade_condicao.nome = c.getString(1);
-            atividade_condicao.processo = c.getString(2);
+            atividade_condicao.nome_processo = c.getString(2);
             atividade_condicao.responsavel = c.getString(3);
             atividade_condicao.departamento = c.getString(4);
             atividade_condicao.tipo = c.getString(5);
@@ -249,7 +250,7 @@ public class RepositorioAtividade_Condicao {
             // Recupera os indices das colunas
             int idxId = c.getColumnIndex(Atividade_Condicaos._ID);
             int idxNome = c.getColumnIndex(Atividade_Condicaos.NOME);
-            int idxProcesso = c.getColumnIndex(Atividade_Condicaos.PROCESSO);
+            int idxProcesso = c.getColumnIndex(Atividade_Condicaos.NOME_PROCESSO);
             int idxResponsavel = c.getColumnIndex(Atividade_Condicaos.RESPONSAVEL);
             int idxDepartamento = c.getColumnIndex(Atividade_Condicaos.DEPARTAMENTO);
             int idxTipo = c.getColumnIndex(Atividade_Condicaos.TIPO);
@@ -262,7 +263,7 @@ public class RepositorioAtividade_Condicao {
                 // recupera os atributos da atividade_condicao
                 atividade_condicao.id = c.getLong(idxId);
                 atividade_condicao.nome = c.getString(idxNome);
-                atividade_condicao.processo = c.getString(idxProcesso);
+                atividade_condicao.nome_processo = c.getString(idxProcesso);
                 atividade_condicao.responsavel = c.getString(idxResponsavel);
                 atividade_condicao.departamento = c.getString(idxDetalhamento);
                 atividade_condicao.tipo = c.getString(idxTipo);
@@ -273,11 +274,11 @@ public class RepositorioAtividade_Condicao {
         return atividade_condicaos;
     }
     // Busca a atividade_condicao pelo nome "select * from atividade_condicao where nome=?"
-    public Atividade_Condicao buscarAtividade_CondicaoPorNome(String nome) {
+    public Atividade_Condicao buscarAtividade_CondicaoPorNomeProcesso(String nomeProcesso) {
         Atividade_Condicao atividade_condicao = null;
         try {
             // Idem a: SELECT _id,nome,responsavel,departamento,tipo,detalhamento,documento from ATIVIDADE_CONDICAO where nome = ?
-            Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicaos.NOME + "='" + nome + "'",
+            Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicaos.NOME_PROCESSO + "='" + nomeProcesso + "'",
                     null, null, null, null);
             // Se encontrou...
             if (c.moveToNext()) {
@@ -285,7 +286,7 @@ public class RepositorioAtividade_Condicao {
                 // utiliza os metodos getLong(), getString(), getString(), etc para recuperar os valores
                 atividade_condicao.id = c.getLong(0);
                 atividade_condicao.nome = c.getString(1);
-                atividade_condicao.processo = c.getString(2);
+                atividade_condicao.nome_processo = c.getString(2);
                 atividade_condicao.responsavel = c.getString(3);
                 atividade_condicao.departamento = c.getString(4);
                 atividade_condicao.tipo = c.getString(5);
@@ -293,7 +294,7 @@ public class RepositorioAtividade_Condicao {
                 atividade_condicao.documento = c.getString(7);
             }
         } catch (SQLException e) {
-            Log.e(CATEGORIA, "Erro ao buscar a atividade_condicao pelo nome: " + e.toString());
+            Log.e(CATEGORIA, "Erro ao buscar a atividade/condicao pelo nome: " + e.toString());
             return null;
         }
         return atividade_condicao;

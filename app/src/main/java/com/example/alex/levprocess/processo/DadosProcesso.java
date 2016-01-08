@@ -64,7 +64,7 @@ public class DadosProcesso extends Activity {
                 finish();// Fecha a tela
             }
         });
-        /*
+
         // Listener para salvar o processo
         ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
         btSalvar.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +83,7 @@ public class DadosProcesso extends Activity {
                     excluir();
                 }
             });
-        }*/
+        }
     }
 
     public void init() {

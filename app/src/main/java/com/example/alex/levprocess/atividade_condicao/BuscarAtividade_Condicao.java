@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.cliente.MenuCliente;
 
 /**
  * Buscar a Atividade_Condicao.
@@ -50,7 +51,7 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         switch (item.getItemId()) {
             case VOLTAR:
                 // Abre a tela listando as atividades condições existentes
-                startActivity(new Intent(this, CadastrarAtividade_Condicao.class));
+                startActivity(new Intent(this, MenuCliente.class));
                 break;
         }
         return true;
@@ -66,21 +67,21 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
     }
     public void onClick(View view) {
         EditText nome = (EditText) findViewById(R.id.etNomeAtividade);
-        EditText processo = (EditText) findViewById(R.id.etNomeProcesso);
+        EditText nome_processo = (EditText) findViewById(R.id.etNome_processo);
         EditText responsavel = (EditText) findViewById(R.id.etResponsavel);
         EditText departamento = (EditText) findViewById(R.id.etDepartamento);
         EditText tipo = (EditText) findViewById(R.id.etTipo);
         EditText detalhamento = (EditText) findViewById(R.id.etDetalhamento);
         EditText documento = (EditText) findViewById(R.id.etDocumento);
 
-        // Recupera o nome da Atividade_Condicao
-        String nomeAtividade_Condicao = nome.getText().toString();
-        // Busca a Atividade_Condicao pelo nome
-        Atividade_Condicao a = buscarNome(nomeAtividade_Condicao);
+        // Recupera o nome do Processo
+        String nomeProcesso = nome_processo.getText().toString();
+        // Busca o Processo pelo nome
+        Atividade_Condicao a = buscarProcesso(nomeProcesso);
         if (a != null) {
             // Atualiza os campos com o resultado
             nome.setText(a.nome);
-            processo.setText(a.processo);
+            nome_processo.setText(a.nome_processo);
             responsavel.setText(a.responsavel);
             departamento.setText(a.departamento);
             tipo.setText(a.tipo);
@@ -89,19 +90,19 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         } else {
             // Limpa os campos
             nome.setText("");
-            processo.setText("");
+            nome_processo.setText("");
             responsavel.setText("");
             departamento.setText("");
             tipo.setText("");
             detalhamento.setText("");
             documento.setText("");
 
-            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma atividade condicao encontrada", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma atividade/condicao encontrada", Toast.LENGTH_SHORT).show();
         }
     }
     // Busca uma atividade_condicao pelo nome
-    protected Atividade_Condicao buscarNome(String nomeAtividade_Condicao) {
-        Atividade_Condicao a = repositorio.buscarAtividade_CondicaoPorNome(nomeAtividade_Condicao);
+    protected Atividade_Condicao buscarProcesso(String nomeProcesso) {
+        Atividade_Condicao a = repositorio.buscarAtividade_CondicaoPorNomeProcesso(nomeProcesso);
         return a;
     }
 }

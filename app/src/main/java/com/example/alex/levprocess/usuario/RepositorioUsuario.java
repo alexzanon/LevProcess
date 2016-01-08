@@ -116,7 +116,6 @@ public class RepositorioUsuario {
 
     }
 
-
     public RepositorioUsuario(Context ctx) {
         try {
             //Open the database

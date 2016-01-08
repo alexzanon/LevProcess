@@ -260,6 +260,24 @@ public class RepositorioProcesso {
         }
         return processos;
     }
+
+    public Processo processoAtual() {
+        Processo processo = null;
+        Cursor c = getCursor();
+        int idxId;
+        try {
+            if (c.moveToLast()) {
+                // Recupera os indices das colunas
+                processo = new Processo();
+                processo.id = c.getLong(0);
+            }
+        } catch (SQLException e) {
+            Log.e(CATEGORIA, "Erro ao buscar o processo pelo nome: " + e.toString());
+            return null;
+        }
+        return processo;
+    }
+
     // Busca o processo pelo nome "select * from processo where nome=?"
     public Processo buscarProcessoPorNome(String nome) {
         Processo processo = null;

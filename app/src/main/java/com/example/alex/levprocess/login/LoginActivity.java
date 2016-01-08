@@ -91,10 +91,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     Toast.makeText(this, resources.getString(R.string.login_auth_okm), Toast.LENGTH_LONG).show();
                     Intent it = new Intent(LoginActivity.this, MenuModelador.class);
                     startActivityForResult(it, 1);
-                } else {
+                } else if (usuario.equals("lucas") && senha.equals("123456")){
                     Toast.makeText(this, resources.getString(R.string.login_auth_okc), Toast.LENGTH_LONG).show();
                     Intent it = new Intent(LoginActivity.this, MenuCliente.class);
                     startActivityForResult(it, 1);
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Invalido", Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -108,7 +110,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             edtUser.setText("");
             edtPassword.setText("");
 
-            Toast.makeText(LoginActivity.this, "Formulario Limpo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "Formulario Limpo", Toast.LENGTH_SHORT).show();
         }
     }
 
