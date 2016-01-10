@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -31,7 +32,7 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
         super.onCreate(icicle);
         init();
         setContentView(R.layout.form_buscar_processo);
-        ImageButton btBuscar = (ImageButton) findViewById(R.id.btBuscar);
+        Button btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(this);
     }
 
@@ -74,8 +75,6 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
         EditText objetivo = (EditText) findViewById(R.id.etObjetivo);
         EditText entradas = (EditText) findViewById(R.id.etEntradas);
         EditText saidas = (EditText) findViewById(R.id.etSaidas);
-        //EditText roteiro = (EditText) findViewById(R.id.etRoteiro);
-        //EditText validacao = (EditText) findViewById(R.id.etValidacao);
 
         // Recupera o nome do processo
         String nomeProcesso = nome.getText().toString();
@@ -89,7 +88,6 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
             objetivo.setText(processo.objetivo);
             entradas.setText(processo.entradas);
             saidas.setText(processo.saidas);
-            //roteiro.setText(processo.roteiro);
         } else {
             // Limpa os campos
             nome.setText("");
@@ -98,7 +96,6 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
             objetivo.setText("");
             entradas.setText("");
             saidas.setText("");
-            //roteiro.setText("");
 
             Toast.makeText(BuscarProcesso.this, "Nenhum processo encontrado", Toast.LENGTH_SHORT).show();
         }

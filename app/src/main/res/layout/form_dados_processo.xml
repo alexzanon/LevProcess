@@ -2,52 +2,121 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
-    <TableLayout
-        android:layout_height="fill_parent" android:layout_width="fill_parent"
-        android:background="#ffffff">
-        <TableRow>
-            <TextView android:id="@+id/text1" android:text="Nome do Processo:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvNomeProcesso" android:width="240px" />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text2" android:text="Responsável:" 	android:textColor="#000000" />
-            <TextView android:id="@+id/tvResponsavel"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text3" android:text="Papel:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvPapel"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text4" android:text="Objetivo:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvObjetivo"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text5" android:text="Condição:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvCondicao"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text6" android:text="Entradas:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvEntradas"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text7" android:text="Saídas:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvSaidas"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text8" android:text="Roteiro:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvRoteiro"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text9" android:text="Processo Valido ?:"	android:textColor="#000000" />
-            <TextView android:id="@+id/tvValidacao"  />
-        </TableRow>
 
-        <LinearLayout android:layout_width="wrap_content"
-            android:layout_height="fill_parent">
-            <ImageButton android:src="@drawable/cancelar" android:id="@+id/btVoltar" android:text="Voltar"
-                android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <ImageButton android:src="@drawable/salvar" android:id="@+id/btValidar" android:text=" Validar "
-                android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        </LinearLayout>
-    </TableLayout>
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/text1"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dip"
+            android:text="Nome do Processo:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvNomeProcesso"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:width="240px" />
+
+        <TextView android:id="@+id/text2"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Responsável:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvResponsavel"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text3"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Papel:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvPapel"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text4"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Objetivo:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvObjetivo"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text5"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Condição:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvCondicao"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text6"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Entradas:"
+            android:textColor="#000000" />
+
+        <TextView android:id="@+id/tvEntradas"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text7"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Saídas:"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvSaidas"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <Button
+            android:id="@+id/lAtividade_Condicao"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Listar Atividades/Condições" />
+
+        <Button
+            android:id="@+id/btValidar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Validar Processo" />
+
+        <Button
+            android:id="@+id/btVoltar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Voltar" />
+
+    </LinearLayout>
 </ScrollView>

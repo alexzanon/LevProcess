@@ -96,7 +96,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     Intent it = new Intent(LoginActivity.this, MenuCliente.class);
                     startActivityForResult(it, 1);
                 } else {
-                    Toast.makeText(LoginActivity.this, "Login Invalido", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Login/ ou Senha Invalido", Toast.LENGTH_LONG).show();
                 }
             }
         }

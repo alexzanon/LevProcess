@@ -9,15 +9,16 @@
     <string name="title_activity_novo_processo">Lev Process - Novo Processo</string>
     <string name="title_activity_nova_atividade_condicao">Lev Process - Nova A./C.</string>
     <string name="title_activity_buscar_atividade_condicao">Lev Process - Buscar A./C.</string>
+    <string name="title_activity_buscar_processo">Lev Process - Buscar Processo</string>
 
     <string name="img_content_description"/>
-    <string name="login_user_required">Campo login obrigatório!</string>
+    <string name="login_user_required">Campo usuario obrigatório!</string>
     <string name="login_password_required">Campo senha obrigatório!</string>
     <string name="login_edt_user_hint">Digite seu login</string>
     <string name="login_edt_password_hint">Digite sua senha</string>
-    <string name="login_lbl_user">Login:</string>
+    <string name="login_lbl_user">Usuario:</string>
     <string name="login_lbl_password">Senha:</string>
-    <string name="login_btn_enter_value">Logar</string>
+    <string name="login_btn_enter_value">Acessar</string>
     <string name="login_btn_limpar_value">Limpar</string>
     <string name="login_auth_okc">Autenticação Válida (Cliente)!</string>
     <string name="login_auth_okm">Autenticação Válida (Modelador)!</string>

@@ -12,6 +12,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao;
 import com.example.alex.levprocess.processo.Processo.Processos;
 
 import android.content.ContentValues;
@@ -175,7 +176,6 @@ public class RepositorioProcesso {
         values.put(Processos.CONDICAO, processo.condicao);
         values.put(Processos.ENTRADAS, processo.entradas);
         values.put(Processos.SAIDAS, processo.saidas);
-        //values.put(Processos.ROTEIRO, processo.roteiro);
         String _id = String.valueOf(processo.id);
         String where = Processos._ID + "=?";
         String[] whereArgs = new String[] { _id };
@@ -223,7 +223,6 @@ public class RepositorioProcesso {
             processo.condicao = c.getString(5);
             processo.entradas = c.getString(6);
             processo.saidas = c.getString(7);
-            //processo.roteiro = c.getString(8);
             return processo;
         }
         return null;
@@ -243,22 +242,51 @@ public class RepositorioProcesso {
     public List<Processo> listarProcessos() {
         Cursor c = getCursor();
         List<Processo> processos = new ArrayList<Processo>();
+        try {
+
+            if (c.moveToFirst()) {
+                // Recupera os indices das colunas
+                int idxId = c.getColumnIndex(Processos._ID);
+                int idxNome = c.getColumnIndex(Processos.NOME);
+                int idxResponsavel = c.getColumnIndex(Processos.RESPONSAVEL);
+                // Loop ate o final
+                do {
+                    Processo processo = new Processo();
+                    processos.add(processo);
+                    // recupera os atributos do processo
+                    processo.id = c.getLong(idxId);
+                    processo.nome = c.getString(idxNome);
+                    processo.responsavel = c.getString(idxResponsavel);
+                } while (c.moveToNext());
+            }
+            return processos;
+        } catch (SQLException e) {
+            Log.e(CATEGORIA, "Erro ao buscar o processo pelo nome: " + e.toString());
+            return null;
+        }
+    }
+
+    public List<Atividade_Condicao> listarAtividades_Condicao(String nomeProcesso) {
+        //busca no banco todos processos com o nome_processo solicitado
+        Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicao.Atividade_Condicaos.NOME_PROCESSO + "='" + nomeProcesso + "'",
+                null, null, null, null);
+        List<Atividade_Condicao> atividade_condicaos = new ArrayList<Atividade_Condicao>();
         if (c.moveToFirst()) {
             // Recupera os indices das colunas
-            int idxId = c.getColumnIndex(Processos._ID);
-            int idxNome = c.getColumnIndex(Processos.NOME);
-            int idxResponsavel = c.getColumnIndex(Processos.RESPONSAVEL);
+            int idxId = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos._ID);
+            int idxNome = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos.NOME);
+            int idxTipo = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos.TIPO);
             // Loop ate o final
             do {
-                Processo processo = new Processo();
-                processos.add(processo);
-                // recupera os atributos do processo
-                processo.id = c.getLong(idxId);
-                processo.nome = c.getString(idxNome);
-                processo.responsavel = c.getString(idxResponsavel);
+                Atividade_Condicao atividade_condicao = new Atividade_Condicao();
+                atividade_condicaos.add(atividade_condicao);
+                // recupera os atributos da atividade_condicao
+                atividade_condicao.id = c.getLong(idxId);
+                atividade_condicao.nome = c.getString(idxNome);
+                atividade_condicao.tipo = c.getString(idxTipo);
             } while (c.moveToNext());
         }
-        return processos;
+        return atividade_condicaos;
     }
 
     public Processo processoAtual() {
@@ -297,7 +325,6 @@ public class RepositorioProcesso {
                 processo.condicao = c.getString(5);
                 processo.entradas = c.getString(6);
                 processo.saidas = c.getString(7);
-                //processo.roteiro = c.getString(8);
             }
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar o processo pelo nome: " + e.toString());

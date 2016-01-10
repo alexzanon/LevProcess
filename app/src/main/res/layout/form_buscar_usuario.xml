@@ -1,30 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent" android:layout_width="fill_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
     android:background="#ffffff">
-    <TableRow>
-        <TextView android:id="@+id/text1" android:text="Nome:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/campoNome" android:width="240px" />
-    </TableRow>
-    <TableRow>
-        <ImageButton android:src="@drawable/pesquisar"
-            android:id="@+id/btBuscar" android:text="Buscar" />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text2" android:text="CPF:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/campoCpf"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text3" android:text="Cargo:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/campoCargo"  />
-    </TableRow>
-    <TableRow>
-        <TextView android:id="@+id/text4" android:text="Login:"
-            android:textColor="#000000" />
-        <EditText android:id="@+id/campoLogin"  />
-    </TableRow>
 
-</TableLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/text1"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Nome:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/campoNome"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:width="240px" />
+
+        <Button
+            android:id="@+id/btBuscar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Buscar" />
+
+        <TextView android:id="@+id/text2"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dip"
+            android:text="CPF:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/campoCpf"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text3"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Cargo:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/campoCargo"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+        <TextView android:id="@+id/text4"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:text="Usuario:"
+            android:textColor="#000000" />
+
+        <EditText android:id="@+id/campoLogin"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent" />
+
+    </LinearLayout>
+</ScrollView>

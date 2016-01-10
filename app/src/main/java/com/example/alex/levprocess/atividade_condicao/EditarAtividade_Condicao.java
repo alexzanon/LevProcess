@@ -30,13 +30,8 @@ public class EditarAtividade_Condicao extends Activity {
 
     static final int RESULT_SALVAR = 1;
     static final int RESULT_EXCLUIR = 2;
-    private EditText campoNome;
-    private EditText campoNomeProcesso;
-    private EditText campoResponsavel;
-    private EditText campoDepartamento;
+    private EditText campoNome, campoNomeProcesso, campoResponsavel, campoDepartamento, campoDetalhamento, campoDocumento;
     private TextView campoTipo;
-    private EditText campoDetalhamento;
-    private EditText campoDocumento;
     private Long id;
     private RadioButton rbatividade,rbcondicao;
     private RepositorioAtividade_Condicao repositorio;
@@ -101,7 +96,8 @@ public class EditarAtividade_Condicao extends Activity {
                 salvar();
             }
         });
-        ImageButton btExcluir = (ImageButton) findViewById(R.id.btExcluir);
+
+        Button btExcluir = (Button) findViewById(R.id.btExcluir);
         if (id == null) {
             // Se id esta nulo, nao pode excluir
             btExcluir.setVisibility(View.INVISIBLE);

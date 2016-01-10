@@ -7,6 +7,7 @@ package com.example.alex.levprocess.usuario;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -29,7 +30,7 @@ public class BuscarUsuario extends Activity implements View.OnClickListener {
         super.onCreate(icicle);
         init();
         setContentView(R.layout.form_buscar_usuario);
-        ImageButton btBuscar = (ImageButton) findViewById(R.id.btBuscar);
+        Button btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(this);
     }
 

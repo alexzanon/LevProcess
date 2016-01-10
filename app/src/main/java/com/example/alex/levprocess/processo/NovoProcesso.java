@@ -80,13 +80,12 @@ public class NovoProcesso extends Activity {
         salvarProcesso(processo);// Salvar
 
         setResult(RESULT_OK, new Intent());	// OK
-        Toast.makeText(NovoProcesso.this, "ID:" + repositorio.processoAtual().id + "Processo Gravado com Sucesso", Toast.LENGTH_LONG).show();
+        Toast.makeText(NovoProcesso.this, "Processo Gravado com Sucesso", Toast.LENGTH_LONG).show();
         // Fecha a tela
-        //finish();
+        finish();
     }
 
     protected void salvarProcesso(Processo processo) {
         repositorio.salvar(processo);
     }
 }
-

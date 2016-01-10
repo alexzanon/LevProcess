@@ -11,6 +11,7 @@
         <TextView android:id="@+id/text1"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:layout_marginTop="10dip"
             android:text="Nome:"
             android:textColor="#000000" />
 
@@ -94,15 +95,29 @@
             android:layout_height="fill_parent"
             android:layout_width="fill_parent" />
 
-        <Button android:id="@+id/btSalvar"
-            android:text=" Salvar "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btSalvar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Salvar" />
 
-        <Button android:id="@+id/btCancelar"
-            android:text="Cancelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btCancelar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Cancelar" />
 
     </LinearLayout>
 </ScrollView>

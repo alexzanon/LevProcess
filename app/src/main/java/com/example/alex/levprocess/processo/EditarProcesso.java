@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -18,7 +19,7 @@ public class EditarProcesso extends Activity {
 
     static final int RESULT_SALVAR = 1;
     static final int RESULT_EXCLUIR = 2;
-    private EditText nome, responsavel, papel, objetivo, condicao, entradas, saidas, roteiro, validacao;
+    private EditText nome, responsavel, papel, objetivo, condicao, entradas, saidas;
     private Long id;
     private RepositorioProcesso repositorio;
 
@@ -34,8 +35,6 @@ public class EditarProcesso extends Activity {
         condicao = (EditText) findViewById(R.id.etCondicao);
         entradas = (EditText) findViewById(R.id.etEntradas);
         saidas = (EditText) findViewById(R.id.etSaidas);
-        //roteiro = (EditText) findViewById(R.id.etRoteiro);
-        //validacao = (EditText) findViewById(R.id.etValidacao);
         id = null;
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
@@ -51,12 +50,10 @@ public class EditarProcesso extends Activity {
                 condicao.setText(c.condicao);
                 entradas.setText(c.entradas);
                 saidas.setText(c.saidas);
-                //roteiro.setText(c.roteiro);
-                //validacao.setText(c.validacao);
             }
         }
 
-        ImageButton btCancelar = (ImageButton) findViewById(R.id.btCancelar);
+        Button btCancelar = (Button) findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
@@ -64,13 +61,14 @@ public class EditarProcesso extends Activity {
             }
         });
         // Listener para salvar o processo
-        ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
+        Button btSalvar = (Button) findViewById(R.id.btSalvar);
         btSalvar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 salvar();
             }
         });
-        ImageButton btExcluir = (ImageButton) findViewById(R.id.btExcluir);
+
+        Button btExcluir = (Button) findViewById(R.id.btExcluir);
         if (id == null) {
             // Se id esta nulo, nao pode excluir
             btExcluir.setVisibility(View.INVISIBLE);
@@ -109,8 +107,6 @@ public class EditarProcesso extends Activity {
         processo.condicao = condicao.getText().toString();
         processo.entradas = entradas.getText().toString();
         processo.saidas = saidas.getText().toString();
-        //processo.roteiro = roteiro.getText().toString();
-        //processo.validacao = validacao.getText().toString();
         salvarProcesso(processo);// Salvar
         setResult(RESULT_OK, new Intent());	// OK
         // Fecha a tela

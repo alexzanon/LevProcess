@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -24,13 +25,7 @@ public class EditarUsuario extends Activity {
 
     static final int RESULT_SALVAR = 1;
     static final int RESULT_EXCLUIR = 2;
-    private EditText campoLogin;
-    private EditText campoSenha;
-    private EditText campoNome;
-    private EditText campoCpf;
-    private EditText campoDataNascimento;
-    private EditText campoTelefone;
-    private EditText campoEmail;
+    private EditText campoLogin, campoSenha, campoNome, campoCpf, campoDataNascimento, campoTelefone, campoEmail;
     private TextView campoTipo;
     private RadioButton rbcliente, rbmodelador, rbadministrador;
     private Long id;
@@ -88,7 +83,7 @@ public class EditarUsuario extends Activity {
             }
         }
 
-        ImageButton btCancelar = (ImageButton) findViewById(R.id.btCancelar);
+        Button btCancelar = (Button) findViewById(R.id.btCancelar);
         btCancelar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
@@ -96,13 +91,14 @@ public class EditarUsuario extends Activity {
             }
         });
         // Listener para salvar o usuario
-        ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
+        Button btSalvar = (Button) findViewById(R.id.btSalvar);
         btSalvar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 salvar();
             }
         });
-        ImageButton btExcluir = (ImageButton) findViewById(R.id.btExcluir);
+
+        Button btExcluir = (Button) findViewById(R.id.btExcluir);
         if (id == null) {
             // Se id esta nulo, nao pode excluir
             btExcluir.setVisibility(View.INVISIBLE);

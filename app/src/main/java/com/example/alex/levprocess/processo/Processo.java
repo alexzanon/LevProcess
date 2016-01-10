@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
 
 public class Processo {
 
-    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS, Processos.ROTEIRO, Processos.VALIDACAO };
+    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS };
 
     public static final String AUTHORITY = "br.livro.android.provider.processos";
 
@@ -22,8 +22,6 @@ public class Processo {
     public String condicao;
     public String entradas;
     public String saidas;
-    public String roteiro;
-    public String validacao;
 
     public Processo() {
 
@@ -69,8 +67,6 @@ public class Processo {
         public static final String CONDICAO = "condicao";
         public static final String ENTRADAS = "entradas";
         public static final String SAIDAS = "saidas";
-        public static final String ROTEIRO = "roteiro";
-        public static final String VALIDACAO = "validacao";
 
         // Metodo que constroi uma Uri para um Processo especifico, com o seu id
         // A Uri e no formato "content://br.livro.android.provider.processo/processos/id"

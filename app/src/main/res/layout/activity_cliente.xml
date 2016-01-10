@@ -41,6 +41,6 @@
         android:textStyle="bold"
         android:background="#1E90FF"
         android:textColor="#F8F8FF"
-        android:text="Logoff" />
+        android:text="Sair" />
 
 </LinearLayout>

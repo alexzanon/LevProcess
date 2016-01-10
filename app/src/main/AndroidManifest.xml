@@ -45,7 +45,8 @@
             android:label="@string/title_activity_novo_processo" >
         </activity>
         <activity
-            android:name=".processo.BuscarProcesso" >
+            android:name=".processo.BuscarProcesso"
+            android:label="@string/title_activity_buscar_processo" >
         </activity>
         <activity
             android:name=".usuario.CadastroUsuarios" >

@@ -1,74 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-    <TableLayout
-        android:layout_height="fill_parent" android:layout_width="fill_parent"
-        android:background="#ffffff">
-        <TextView
-            android:id="@+id/introducao"
-            android:text="Todos os campos são obrigatórios" />
-        <TableRow>
-            <TextView android:id="@+id/text1" android:text="Login:"	android:textColor="#000000" />
-            <EditText android:id="@+id/campoLogin" android:width="240px" />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text2" android:text="Senha:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoSenha"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text3" android:text="Nome:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoNome"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text4" android:text="CPF:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoCpf"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text5" android:text="Data de Nascimento:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoDataNascimento"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text6" android:text="Telefone:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoTelefone"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text7" android:text="E-mail:" 	android:textColor="#000000" />
-            <EditText android:id="@+id/campoEmail"  />
-        </TableRow>
-        <TableRow>
-            <TextView android:id="@+id/text8" android:text="Tipo:" 	android:textColor="#000000" />
-            <RadioGroup
-                android:id="@+id/rgGroup1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-                <RadioButton
-                    android:id="@+id/RBCliente"
-                    android:text="Cliente"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/RBModelador"
-                    android:text="Modelador"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/RBAdministrador"
-                    android:text="Administrador"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                </RadioGroup>
-        </TableRow>
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-        <LinearLayout android:layout_width="wrap_content"
-            android:layout_height="fill_parent">
-            <ImageButton android:src="@drawable/cancelar" android:id="@+id/btCancelar" android:text="Cancelar"
-                android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <ImageButton android:src="@drawable/salvar" android:id="@+id/btSalvar" android:text=" Salvar "
-                android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <ImageButton android:src="@drawable/excluir" android:id="@+id/btExcluir" android:text=" Excluir "
-                android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        </LinearLayout>
-    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+    <TextView android:id="@+id/text1"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dip"
+        android:text="Usuario:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoLogin"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text2"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="Senha:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoSenha"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text3"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="Nome:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoNome"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text4"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="CPF:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoCpf"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text5"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="Data de Nascimento:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoDataNascimento"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text6"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="Telefone:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoTelefone"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text7"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="E-mail:"
+        android:textColor="#000000" />
+
+    <EditText android:id="@+id/campoEmail"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent" />
+
+    <TextView android:id="@+id/text8"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:text="Tipo:"
+        android:textColor="#000000" />
+
+    <RadioGroup
+        android:id="@+id/rgGroup1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <RadioButton
+            android:id="@+id/RBCliente"
+            android:text="Cliente"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/RBModelador"
+            android:text="Modelador"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/RBAdministrador"
+            android:text="Administrador"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btSalvar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Salvar" />
+
+        <Button
+            android:id="@+id/btCancelar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Cancelar" />
+
+        <Button
+            android:id="@+id/btExcluir"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Excluir" />
+
+    </LinearLayout>
 </ScrollView>

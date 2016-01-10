@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.banco.DatabaseHandler;
 import com.example.alex.levprocess.cliente.MenuCliente;
 
 /**
@@ -24,7 +27,6 @@ import com.example.alex.levprocess.cliente.MenuCliente;
 
 public class BuscarAtividade_Condicao extends Activity implements View.OnClickListener {
 
-    protected static final int VOLTAR = 1;
     private RepositorioAtividade_Condicao repositorio;
 
     @Override
@@ -32,29 +34,20 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         super.onCreate(icicle);
         init();
         setContentView(R.layout.form_buscar_atividade_condicao);
-        ImageButton btBuscar = (ImageButton) findViewById(R.id.btBuscar);
+        Button btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(this);
+
+        Button btCancelar = (Button) findViewById(R.id.btCancelar);
+        btCancelar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                setResult(RESULT_CANCELED);
+                finish();// Fecha a tela
+            }
+        });
     }
 
     public void init() {
         repositorio = new RepositorioAtividade_Condicao(this);
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        menu.add(0, VOLTAR, 0, "Voltar").setIcon(R.drawable.limpar);
-        return true;
-    }
-
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
-        // Clicou no menu
-        switch (item.getItemId()) {
-            case VOLTAR:
-                // Abre a tela listando as atividades condições existentes
-                startActivity(new Intent(this, MenuCliente.class));
-                break;
-        }
-        return true;
     }
 
     @Override
@@ -66,38 +59,33 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         finish();
     }
     public void onClick(View view) {
-        EditText nome = (EditText) findViewById(R.id.etNomeAtividade);
         EditText nome_processo = (EditText) findViewById(R.id.etNome_processo);
-        EditText responsavel = (EditText) findViewById(R.id.etResponsavel);
-        EditText departamento = (EditText) findViewById(R.id.etDepartamento);
-        EditText tipo = (EditText) findViewById(R.id.etTipo);
-        EditText detalhamento = (EditText) findViewById(R.id.etDetalhamento);
-        EditText documento = (EditText) findViewById(R.id.etDocumento);
 
         // Recupera o nome do Processo
         String nomeProcesso = nome_processo.getText().toString();
         // Busca o Processo pelo nome
+
         Atividade_Condicao a = buscarProcesso(nomeProcesso);
         if (a != null) {
             // Atualiza os campos com o resultado
-            nome.setText(a.nome);
+            //nome.setText(a.nome);
             nome_processo.setText(a.nome_processo);
-            responsavel.setText(a.responsavel);
+            /*responsavel.setText(a.responsavel);
             departamento.setText(a.departamento);
             tipo.setText(a.tipo);
             detalhamento.setText(a.detalhamento);
-            documento.setText(a.documento);
+            documento.setText(a.documento);*/
         } else {
             // Limpa os campos
-            nome.setText("");
+            //nome.setText("");
             nome_processo.setText("");
-            responsavel.setText("");
+            /*responsavel.setText("");
             departamento.setText("");
             tipo.setText("");
             detalhamento.setText("");
-            documento.setText("");
+            documento.setText("");*/
 
-            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma atividade/condicao encontrada", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma processo encontrado, para listar as atividades/condicoes", Toast.LENGTH_SHORT).show();
         }
     }
     // Busca uma atividade_condicao pelo nome

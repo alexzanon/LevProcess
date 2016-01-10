@@ -6,8 +6,10 @@ package com.example.alex.levprocess.processo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -19,7 +21,7 @@ public class DadosProcesso extends Activity {
 
     static final int RESULT_SALVAR = 1;
     static final int RESULT_EXCLUIR = 2;
-    private TextView nome, responsavel, papel, objetivo, condicao, entradas, saidas, roteiro, validacao;
+    private TextView nome, responsavel, papel, objetivo, condicao, entradas, saidas;
     private Long id;
     private RepositorioProcesso repositorio;
 
@@ -35,8 +37,6 @@ public class DadosProcesso extends Activity {
         condicao = (TextView) findViewById(R.id.tvCondicao);
         entradas = (TextView) findViewById(R.id.tvEntradas);
         saidas = (TextView) findViewById(R.id.tvSaidas);
-        //roteiro = (TextView) findViewById(R.id.tvRoteiro);
-        //validacao = (TextView) findViewById(R.id.tvValidacao);
         id = null;
         Bundle extras = getIntent().getExtras();
         // Se for para Editar, recuperar os valores ...
@@ -52,12 +52,10 @@ public class DadosProcesso extends Activity {
                 condicao.setText(c.condicao);
                 entradas.setText(c.entradas);
                 saidas.setText(c.saidas);
-                //roteiro.setText(c.roteiro);
-                //validacao.setText(c.validacao);
             }
         }
 
-        ImageButton btVoltar = (ImageButton) findViewById(R.id.btVoltar);
+        Button btVoltar = (Button) findViewById(R.id.btVoltar);
         btVoltar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
@@ -65,25 +63,14 @@ public class DadosProcesso extends Activity {
             }
         });
 
-        // Listener para salvar o processo
-        ImageButton btSalvar = (ImageButton) findViewById(R.id.btSalvar);
-        btSalvar.setOnClickListener(new View.OnClickListener() {
+        Button btValidar = (Button) findViewById(R.id.btValidar);
+        /*btValidar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                salvar();
+                String nomeProcesso = nome.getText().toString();
+
+                //chamar o metodo do repositorio que possui a busca das atividades passando o nome dp
             }
-        });
-        ImageButton btExcluir = (ImageButton) findViewById(R.id.btExcluir);
-        if (id == null) {
-            // Se id esta nulo, nao pode excluir
-            btExcluir.setVisibility(View.INVISIBLE);
-        } else {
-            // Listener para excluir o processo
-            btExcluir.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    excluir();
-                }
-            });
-        }
+        });*/
     }
 
     public void init() {
@@ -111,8 +98,6 @@ public class DadosProcesso extends Activity {
         processo.condicao = condicao.getText().toString();
         processo.entradas = entradas.getText().toString();
         processo.saidas = saidas.getText().toString();
-        //processo.roteiro = roteiro.getText().toString();
-        //processo.validacao = validacao.getText().toString();
         salvarProcesso(processo);// Salvar
         setResult(RESULT_OK, new Intent());	// OK
         // Fecha a tela
