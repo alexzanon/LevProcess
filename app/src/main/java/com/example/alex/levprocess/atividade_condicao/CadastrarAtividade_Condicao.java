@@ -15,20 +15,23 @@ import android.widget.ListView;
 
 import com.example.alex.levprocess.R;
 
+import com.example.alex.levprocess.cliente.MenuCliente;
 import com.example.alex.levprocess.modelador.MenuModelador;
 import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao.Atividade_Condicaos;
 
 public class CadastrarAtividade_Condicao extends ListActivity {
 
     protected static final int INSERIR_EDITAR = 1;
-    protected static final int BUSCAR = 2;
     protected static final int VOLTAR = 3;
     private RepositorioAtividade_Condicao repositorio;
     private List<Atividade_Condicao> atividade_condicaos;
+    String nomeP;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        Intent it = getIntent();
+        nomeP = it.getStringExtra("nomeP");
         init();
         atualizarLista();
     }
@@ -39,7 +42,7 @@ public class CadastrarAtividade_Condicao extends ListActivity {
 
     protected void atualizarLista() {
         // Pega a lista de atividade_condicaos e exibe na tela
-        atividade_condicaos = repositorio.listarAtividade_Condicao();
+        atividade_condicaos = repositorio.buscarAtividade_CondicaoPorNomeProcesso(nomeP);
         // Adaptador de lista customizado para cada linha de uma atividade_condicao
         setListAdapter(new Atividade_CondicaoListAdapter(this, atividade_condicaos));
     }
@@ -48,7 +51,6 @@ public class CadastrarAtividade_Condicao extends ListActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         menu.add(0, INSERIR_EDITAR, 0, "Inserir Novo").setIcon(R.drawable.novo);
-        menu.add(0, BUSCAR, 0, "Buscar").setIcon(R.drawable.pesquisar);
         menu.add(0, VOLTAR, 0, "Voltar").setIcon(R.drawable.limpar);
         return true;
     }
@@ -61,13 +63,9 @@ public class CadastrarAtividade_Condicao extends ListActivity {
                 // Abre a tela com o formulario para adicionar
                 startActivityForResult(new Intent(this, EditarAtividade_Condicao.class), INSERIR_EDITAR);
                 break;
-            case BUSCAR:
-                // Abre a tela para buscar a atividade_condicao pelo nome
-                startActivity(new Intent(this, BuscarAtividade_Condicao.class));
-                break;
             case VOLTAR:
                 // Abre a tela para buscar a atividade_condicao pelo nome
-                startActivity(new Intent(this, MenuModelador.class));
+                finish();
                 break;
         }
         return true;

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.alex.levprocess.R;
@@ -31,11 +32,12 @@ public class Atividade_CondicaoListAdapter extends BaseAdapter {
         Atividade_Condicao a = lista.get(position);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.atividade_condicao_linha_tabela, null);
+
         // Atualiza o valor do TextView
         TextView nome = (TextView) view.findViewById(R.id.etNomeAtividade_Condicao);
         nome.setText(a.nome);
-        //TextView tipo = (TextView) view.findViewById(R.id.etTipo);
-        //tipo.setText(a.tipo);
+        TextView tipo = (TextView) view.findViewById(R.id.etTipo);
+        tipo.setText(a.tipo);
         return view;
     }
 }

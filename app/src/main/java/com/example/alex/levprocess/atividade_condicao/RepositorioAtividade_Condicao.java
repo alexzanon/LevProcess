@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao.Atividade_Condicaos;
+import com.example.alex.levprocess.processo.Processo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -250,12 +251,7 @@ public class RepositorioAtividade_Condicao {
             // Recupera os indices das colunas
             int idxId = c.getColumnIndex(Atividade_Condicaos._ID);
             int idxNome = c.getColumnIndex(Atividade_Condicaos.NOME);
-            int idxProcesso = c.getColumnIndex(Atividade_Condicaos.NOME_PROCESSO);
-            int idxResponsavel = c.getColumnIndex(Atividade_Condicaos.RESPONSAVEL);
-            int idxDepartamento = c.getColumnIndex(Atividade_Condicaos.DEPARTAMENTO);
             int idxTipo = c.getColumnIndex(Atividade_Condicaos.TIPO);
-            int idxDetalhamento = c.getColumnIndex(Atividade_Condicaos.DETALHAMENTO);
-            int idxDocumento = c.getColumnIndex(Atividade_Condicaos.DOCUMENTO);
             // Loop ate o final
             do {
                 Atividade_Condicao atividade_condicao = new Atividade_Condicao();
@@ -263,41 +259,39 @@ public class RepositorioAtividade_Condicao {
                 // recupera os atributos da atividade_condicao
                 atividade_condicao.id = c.getLong(idxId);
                 atividade_condicao.nome = c.getString(idxNome);
-                atividade_condicao.nome_processo = c.getString(idxProcesso);
-                atividade_condicao.responsavel = c.getString(idxResponsavel);
-                atividade_condicao.departamento = c.getString(idxDetalhamento);
                 atividade_condicao.tipo = c.getString(idxTipo);
-                atividade_condicao.detalhamento = c.getString(idxDepartamento);
-                atividade_condicao.documento = c.getString(idxDocumento);
             } while (c.moveToNext());
         }
         return atividade_condicaos;
     }
     // Busca a atividade_condicao pelo nome "select * from atividade_condicao where nome=?"
-    public Atividade_Condicao buscarAtividade_CondicaoPorNomeProcesso(String nomeProcesso) {
-        Atividade_Condicao atividade_condicao = null;
+    public List<Atividade_Condicao> buscarAtividade_CondicaoPorNomeProcesso(String nomeProcesso) {
+        // Idem a: SELECT _id,nome,responsavel,departamento,tipo,detalhamento,documento from ATIVIDADE_CONDICAO where nome = ?
+        Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicaos.NOME_PROCESSO + "='" + nomeProcesso + "'",
+                null, null, null, null);
+        List<Atividade_Condicao> atividades = new ArrayList<Atividade_Condicao>();
+        // Se encontrou...
         try {
-            // Idem a: SELECT _id,nome,responsavel,departamento,tipo,detalhamento,documento from ATIVIDADE_CONDICAO where nome = ?
-            Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicaos.NOME_PROCESSO + "='" + nomeProcesso + "'",
-                    null, null, null, null);
-            // Se encontrou...
             if (c.moveToNext()) {
-                atividade_condicao = new Atividade_Condicao();
-                // utiliza os metodos getLong(), getString(), getString(), etc para recuperar os valores
-                atividade_condicao.id = c.getLong(0);
-                atividade_condicao.nome = c.getString(1);
-                atividade_condicao.nome_processo = c.getString(2);
-                atividade_condicao.responsavel = c.getString(3);
-                atividade_condicao.departamento = c.getString(4);
-                atividade_condicao.tipo = c.getString(5);
-                atividade_condicao.detalhamento = c.getString(6);
-                atividade_condicao.documento = c.getString(7);
+                // Recupera os indices das colunas
+                int idxId = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos._ID);
+                int idxNome = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos.NOME);
+                int idxTipo = c.getColumnIndex(Atividade_Condicao.Atividade_Condicaos.TIPO);
+                // Loop ate o final
+                do {
+                    Atividade_Condicao atividade_condicao = new Atividade_Condicao();
+                    atividades.add(atividade_condicao);
+                    // recupera os atributos do atividade_condicao
+                    atividade_condicao.id = c.getLong(idxId);
+                    atividade_condicao.nome = c.getString(idxNome);
+                    atividade_condicao.tipo = c.getString(idxTipo);
+                }while (c.moveToNext());
             }
+            return atividades;
         } catch (SQLException e) {
             Log.e(CATEGORIA, "Erro ao buscar a atividade/condicao pelo nome: " + e.toString());
             return null;
         }
-        return atividade_condicao;
     }
 
     // Busca uma atividade_condicao utilizando as configuracoes definidas no

@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.alex.levprocess.R;
+import com.example.alex.levprocess.atividade_condicao.CadastrarAtividade_Condicao;
 import com.example.alex.levprocess.processo.Processo.Processos;
 
 public class DadosProcesso extends Activity {
@@ -63,14 +64,16 @@ public class DadosProcesso extends Activity {
             }
         });
 
-        Button btValidar = (Button) findViewById(R.id.btValidar);
-        /*btValidar.setOnClickListener(new View.OnClickListener() {
+        Button btListarAtividadeCondicao = (Button) findViewById(R.id.lAtividade_Condicao);
+        btListarAtividadeCondicao.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String nomeProcesso = nome.getText().toString();
-
+                String nomeP = nome.getText().toString();
+                Intent it = new Intent(DadosProcesso.this, CadastrarAtividade_Condicao.class);
+                it.putExtra("nomeP", nomeP);
+                startActivityForResult(it, 2);
                 //chamar o metodo do repositorio que possui a busca das atividades passando o nome dp
             }
-        });*/
+        });
     }
 
     public void init() {
