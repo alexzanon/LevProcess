@@ -36,8 +36,6 @@ public class Atividade_CondicaoListAdapter extends BaseAdapter {
         // Atualiza o valor do TextView
         TextView nome = (TextView) view.findViewById(R.id.etNomeAtividade_Condicao);
         nome.setText(a.nome);
-        TextView tipo = (TextView) view.findViewById(R.id.etTipo);
-        tipo.setText(a.tipo);
         return view;
     }
 }

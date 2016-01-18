@@ -33,8 +33,6 @@ public class ProcessoListAdapter extends BaseAdapter {
         // Atualiza o valor do TextView
         TextView nome = (TextView) view.findViewById(R.id.etNomeProcesso);
         nome.setText(p.nome);
-        TextView responsavel = (TextView) view.findViewById(R.id.etResponsavel);
-        responsavel.setText(p.responsavel);
         return view;
     }
 }
