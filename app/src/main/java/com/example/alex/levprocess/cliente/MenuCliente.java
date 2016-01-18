@@ -14,6 +14,7 @@ import com.example.alex.levprocess.R;
 import com.example.alex.levprocess.atividade_condicao.BuscarAtividade_Condicao;
 import com.example.alex.levprocess.atividade_condicao.NovaAtividade_Condicao;
 import com.example.alex.levprocess.login.LoginActivity;
+import com.example.alex.levprocess.processo.BuscarProcesso;
 import com.example.alex.levprocess.processo.NovoProcesso;
 
 public class MenuCliente extends Activity {
@@ -24,6 +25,7 @@ public class MenuCliente extends Activity {
 
         Button botaoLogoff = (Button) findViewById(R.id.botaoLogoff);
         Button botaoNProcesso = (Button) findViewById(R.id.botaoNProcesso);
+        Button botaoBProcesso = (Button) findViewById(R.id.botaoBProcesso);
         Button botaoCAtividade_Condicao = (Button) findViewById(R.id.botaoCAtividade_Condicao);
         Button botaoVRProcesso = (Button) findViewById(R.id.botaoVRProcesso);
 
@@ -31,6 +33,12 @@ public class MenuCliente extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent(MenuCliente.this, LoginActivity.class);
                 startActivityForResult(it, 1);
+            }
+        });
+        botaoBProcesso.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(MenuCliente.this, BuscarProcesso.class);
+                startActivityForResult(it, 2);
             }
         });
         botaoNProcesso.setOnClickListener(new View.OnClickListener() {

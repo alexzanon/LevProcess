@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/process"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dip"
+        android:text="Nome do Processo:"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:prompt="@string/spinner_nome"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <Button
+        android:id="@+id/btValidarP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:padding="15dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#1E90FF"
+        android:textColor="#F8F8FF"
+        android:text="Validar" />
+
+    <Button
+        android:id="@+id/btCancelar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:padding="15dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#1E90FF"
+        android:textColor="#F8F8FF"
+        android:text="Cancelar" />
+
+</LinearLayout>

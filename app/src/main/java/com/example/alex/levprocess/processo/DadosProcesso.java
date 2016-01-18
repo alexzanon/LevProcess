@@ -71,7 +71,6 @@ public class DadosProcesso extends Activity {
                 Intent it = new Intent(DadosProcesso.this, CadastrarAtividade_Condicao.class);
                 it.putExtra("nomeP", nomeP);
                 startActivityForResult(it, 2);
-                //chamar o metodo do repositorio que possui a busca das atividades passando o nome dp
             }
         });
     }

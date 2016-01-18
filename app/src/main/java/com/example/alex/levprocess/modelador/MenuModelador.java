@@ -22,6 +22,7 @@ public class MenuModelador extends Activity {
 
         Button botaoLogoff = (Button) findViewById(R.id.botaoLogoff);
         Button botaoPPendentes = (Button) findViewById(R.id.botaoPPendentes);
+        Button botaoVProcessos = (Button) findViewById(R.id.botaoVProcesso);
 
         botaoLogoff.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -34,6 +35,12 @@ public class MenuModelador extends Activity {
             public void onClick(View v) {
                 Intent it = new Intent(MenuModelador.this, CadastroProcesso.class);
                 startActivityForResult(it, 2);
+            }
+        });
+
+        botaoVProcessos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //IMPLEMENTAR VALIDAÇÃO DE PROCESSO
             }
         });
     }

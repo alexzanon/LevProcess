@@ -83,10 +83,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         String senha = edtPassword.getText().toString();
         if (v.getId() == R.id.botaoLogar) {
             if (validateFields()) {
-                if (usuario.equals("alex") && senha.equals("123456")) {
+                if (usuario.equals("daian") && senha.equals("123456")) {
                     /**
-                     * Nesse ponto você poderia chamar um serviço de autenticação do usuário.
-                     * Por questões de simplicidade e entendimento emitiremos somente um alerta
+                     * Um trabalho futuro será implementar uma funcionalidade para validar login e senha
                      */
                     Toast.makeText(this, resources.getString(R.string.login_auth_okm), Toast.LENGTH_LONG).show();
                     Intent it = new Intent(LoginActivity.this, MenuModelador.class);
@@ -117,7 +116,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     /**
      * Efetua a validação dos campos.Nesse caso, valida se os campos não estão vazios e se tem
      * tamanho permitido.
-     * Nesse método você poderia colocar outros tipos de validações de acordo com a sua necessidade.
      *
      * @return boolean que indica se os campos foram validados com sucesso ou não
      */
@@ -129,11 +127,11 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
     private boolean isEmptyFields(String user, String pass) {
         if (TextUtils.isEmpty(user)) {
-            edtUser.requestFocus(); //seta o foco para o campo user
+            edtUser.requestFocus(); //seta o foco para o campo usuário
             edtUser.setError(resources.getString(R.string.login_user_required));
             return true;
         } else if (TextUtils.isEmpty(pass)) {
-            edtPassword.requestFocus(); //seta o foco para o campo password
+            edtPassword.requestFocus(); //seta o foco para o campo senha
             edtPassword.setError(resources.getString(R.string.login_password_required));
             return true;
         }

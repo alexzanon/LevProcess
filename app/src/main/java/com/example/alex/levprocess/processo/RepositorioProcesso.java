@@ -37,7 +37,6 @@ public class RepositorioProcesso {
     protected SQLiteDatabase db;
 
     public void createDataBase() throws IOException{
-        // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
         if(!dbExist){
             try {
@@ -67,30 +66,24 @@ public class RepositorioProcesso {
 
     private void copyDataBase(String assetfile,String DB) {
 
-        //Open your local db as the input stream
         InputStream myInput = null;
-        //Open the empty db as the output stream
         OutputStream myOutput = null;
         try {
             myInput = myCtx.getAssets().open(assetfile);
 
-            // Path to the just created empty db
             String outFileName = DB_PATH + DB;
 
             myOutput = new FileOutputStream(outFileName);
 
-            //transfer bytes from the inputfile to the outputfile
             byte[] buffer = new byte[1024];
             int length;
             while ((length = myInput.read(buffer))>0){
                 myOutput.write(buffer, 0, length);
             }
 
-
             System.out.println("***************************************");
             System.out.println("####### Data base copied ##############");
             System.out.println("***************************************");
-
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -100,7 +93,6 @@ public class RepositorioProcesso {
             e.printStackTrace();
         }
         finally{
-            //Close the streams
             try {
                 myOutput.flush();
                 myOutput.close();
@@ -116,13 +108,9 @@ public class RepositorioProcesso {
 
     public RepositorioProcesso(Context ctx) {
         try {
-            //Open the database
             this.myCtx = ctx;
 
-            //createDataBase();
-            // Abre o banco de dados ja existente
             String myPath = DB_PATH + NOME_BANCO;
-            //db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
             db = ctx.openOrCreateDatabase(NOME_BANCO, Context.MODE_PRIVATE, null);
             db.setVersion(1);
             Log.e(CATEGORIA, db.getPath());
@@ -244,12 +232,12 @@ public class RepositorioProcesso {
         List<Processo> processos = new ArrayList<Processo>();
         try {
 
-            if (c.moveToFirst()) {
+            if (c.moveToLast()) {
                 // Recupera os indices das colunas
                 int idxId = c.getColumnIndex(Processos._ID);
                 int idxNome = c.getColumnIndex(Processos.NOME);
                 int idxResponsavel = c.getColumnIndex(Processos.RESPONSAVEL);
-                // Loop ate o final
+                // Loop inverso do final ao início, para listar o último processo cadastrado
                 do {
                     Processo processo = new Processo();
                     processos.add(processo);
@@ -257,7 +245,7 @@ public class RepositorioProcesso {
                     processo.id = c.getLong(idxId);
                     processo.nome = c.getString(idxNome);
                     processo.responsavel = c.getString(idxResponsavel);
-                } while (c.moveToNext());
+                } while (c.moveToPrevious());
             }
             return processos;
         } catch (SQLException e) {

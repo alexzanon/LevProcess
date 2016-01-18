@@ -53,7 +53,7 @@ public class BuscarProcesso extends Activity implements View.OnClickListener {
         switch (item.getItemId()) {
             case VOLTAR:
                 // Abre a tela para buscar o processo pelo nome
-                startActivity(new Intent(this, CadastroProcesso.class));
+                finish();
                 break;
         }
         return true;

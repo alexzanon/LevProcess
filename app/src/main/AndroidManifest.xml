@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/acesso"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -55,9 +55,6 @@
             android:name=".usuario.EditarUsuario" >
         </activity>
         <activity
-            android:name=".usuario.BuscarUsuario" >
-        </activity>
-        <activity
             android:name=".atividade_condicao.CadastrarAtividade_Condicao" >
         </activity>
         <activity
@@ -70,6 +67,9 @@
         <activity
             android:name=".atividade_condicao.NovaAtividade_Condicao"
             android:label="@string/title_activity_nova_atividade_condicao" >
+        </activity>
+        <activity
+            android:name=".atividade_condicao.DadosAtividade_Condicao" >
         </activity>
     </application>
 

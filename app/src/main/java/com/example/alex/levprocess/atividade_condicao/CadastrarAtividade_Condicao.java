@@ -61,7 +61,7 @@ public class CadastrarAtividade_Condicao extends ListActivity {
         switch (item.getItemId()) {
             case INSERIR_EDITAR:
                 // Abre a tela com o formulario para adicionar
-                startActivityForResult(new Intent(this, EditarAtividade_Condicao.class), INSERIR_EDITAR);
+                startActivityForResult(new Intent(this, NovaAtividade_Condicao.class), INSERIR_EDITAR);
                 break;
             case VOLTAR:
                 // Abre a tela para buscar a atividade_condicao pelo nome

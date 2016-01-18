@@ -39,7 +39,6 @@ public class RepositorioAtividade_Condicao {
 
 
     public void createDataBase() throws IOException{
-        // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
         if(!dbExist){
             try {
@@ -71,19 +70,15 @@ public class RepositorioAtividade_Condicao {
 
     private void copyDataBase(String assetfile,String DB) {
 
-        //Open your local db as the input stream
         InputStream myInput = null;
-        //Open the empty db as the output stream
         OutputStream myOutput = null;
         try {
             myInput = myCtx.getAssets().open(assetfile);
 
-            // Path to the just created empty db
             String outFileName = DB_PATH + DB;
 
             myOutput = new FileOutputStream(outFileName);
 
-            //transfer bytes from the inputfile to the outputfile
             byte[] buffer = new byte[1024];
             int length;
             while ((length = myInput.read(buffer))>0){
@@ -104,7 +99,6 @@ public class RepositorioAtividade_Condicao {
             e.printStackTrace();
         }
         finally{
-            //Close the streams
             try {
                 myOutput.flush();
                 myOutput.close();
@@ -117,16 +111,12 @@ public class RepositorioAtividade_Condicao {
 
     }
 
-
     public RepositorioAtividade_Condicao(Context ctx) {
         try {
-            //Open the database
+
             this.myCtx = ctx;
 
-            //createDataBase();
-            // Abre o banco de dados ja existente
             String myPath = DB_PATH + NOME_BANCO;
-            //db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
             db = ctx.openOrCreateDatabase(NOME_BANCO, Context.MODE_PRIVATE, null);
             db.setVersion(1);
             Log.e(CATEGORIA, db.getPath());
@@ -264,9 +254,9 @@ public class RepositorioAtividade_Condicao {
         }
         return atividade_condicaos;
     }
-    // Busca a atividade_condicao pelo nome "select * from atividade_condicao where nome=?"
+    // Busca a atividade_condicao pelo nome do processo "select * from atividade_condicao where nome=?"
     public List<Atividade_Condicao> buscarAtividade_CondicaoPorNomeProcesso(String nomeProcesso) {
-        // Idem a: SELECT _id,nome,responsavel,departamento,tipo,detalhamento,documento from ATIVIDADE_CONDICAO where nome = ?
+        // Idem a: SELECT _id,nome,responsavel,departamento,tipo,detalhamento,documento from ATIVIDADE_CONDICAO where nome_processo = ?
         Cursor c = db.query(NOME_TABELA, Atividade_Condicao.colunas, Atividade_Condicaos.NOME_PROCESSO + "='" + nomeProcesso + "'",
                 null, null, null, null);
         List<Atividade_Condicao> atividades = new ArrayList<Atividade_Condicao>();

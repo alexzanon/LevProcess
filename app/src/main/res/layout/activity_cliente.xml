@@ -14,6 +14,16 @@
         android:text="Novo Processo" />
 
     <Button
+        android:id="@+id/botaoBProcesso"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/screen_border"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:text="Buscar Processo" />
+
+    <Button
         android:id="@+id/botaoCAtividade_Condicao"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

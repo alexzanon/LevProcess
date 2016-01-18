@@ -64,8 +64,6 @@ public class EditarAtividade_Condicao extends Activity {
         });
 
         Bundle extras = getIntent().getExtras();
-        //String paramRecebidoPelaActivity1 = extras.getString("ID_PROCESSO");
-        //Toast.makeText(EditarAtividade_Condicao.this, "ID:" + paramRecebidoPelaActivity1, Toast.LENGTH_LONG).show();
         // Se for para Editar, recuperar os valores ...
         if (extras != null) {
             id = extras.getLong(Atividade_Condicaos._ID);

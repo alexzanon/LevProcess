@@ -133,10 +133,6 @@ public class NovaAtividade_Condicao extends Activity {
         spinner.setAdapter(dataAdapter);
     }
 
-    /*public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        campoNomeProcesso = parent.getItemAtPosition(position).toString();
-    }*/
-
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }

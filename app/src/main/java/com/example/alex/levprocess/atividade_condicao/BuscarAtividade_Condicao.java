@@ -76,7 +76,6 @@ public class BuscarAtividade_Condicao extends Activity implements View.OnClickLi
         Intent it = new Intent(BuscarAtividade_Condicao.this, CadastrarAtividade_Condicao.class);
         it.putExtra("nomeP", nomeProcesso);
         startActivityForResult(it, 2);
-        //Toast.makeText(BuscarAtividade_Condicao.this, "Nenhuma processo encontrado, para listar as atividades/condicoes", Toast.LENGTH_SHORT).show();
     }
 
     // Busca uma atividade_condicao pelo nome

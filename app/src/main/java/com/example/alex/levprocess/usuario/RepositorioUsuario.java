@@ -36,7 +36,6 @@ public class RepositorioUsuario {
     protected SQLiteDatabase db;
 
     public void createDataBase() throws IOException{
-        // for first database;
         boolean dbExist = checkDataBase(NOME_BANCO);
         if(!dbExist){
             try {
@@ -47,10 +46,6 @@ public class RepositorioUsuario {
         }
     }
 
-    /**
-     * Check if the database already exist to avoid re-copying the file each time you open the application.
-     * @return true if it exists, false if it doesn't
-     */
     private boolean checkDataBase(String DB){
         SQLiteDatabase checkDB = null;
         try{
@@ -70,30 +65,24 @@ public class RepositorioUsuario {
 
     private void copyDataBase(String assetfile,String DB) {
 
-        //Open your local db as the input stream
         InputStream myInput = null;
-        //Open the empty db as the output stream
         OutputStream myOutput = null;
         try {
             myInput = myCtx.getAssets().open(assetfile);
 
-            // Path to the just created empty db
             String outFileName = DB_PATH + DB;
 
             myOutput = new FileOutputStream(outFileName);
 
-            //transfer bytes from the inputfile to the outputfile
             byte[] buffer = new byte[1024];
             int length;
             while ((length = myInput.read(buffer))>0){
                 myOutput.write(buffer, 0, length);
             }
 
-
             System.out.println("***************************************");
             System.out.println("####### Data base copied ##############");
             System.out.println("***************************************");
-
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -103,7 +92,6 @@ public class RepositorioUsuario {
             e.printStackTrace();
         }
         finally{
-            //Close the streams
             try {
                 myOutput.flush();
                 myOutput.close();
@@ -118,13 +106,9 @@ public class RepositorioUsuario {
 
     public RepositorioUsuario(Context ctx) {
         try {
-            //Open the database
             this.myCtx = ctx;
 
-            //createDataBase();
-            // Abre o banco de dados ja existente
             String myPath = DB_PATH + NOME_BANCO;
-            //db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
             db = ctx.openOrCreateDatabase(NOME_BANCO, Context.MODE_PRIVATE, null);
             db.setVersion(1);
             Log.e(CATEGORIA, db.getPath());
@@ -138,7 +122,7 @@ public class RepositorioUsuario {
     protected RepositorioUsuario() {
         // Apenas para criar uma subclasse...
     }
-    // Salva o curriculo, insere um novo ou atualiza
+    // Salva o usuario, insere um novo ou atualiza
     public long salvar(Usuario usuario) {
         long id = usuario.id;
         if (id != 0) {
@@ -194,7 +178,7 @@ public class RepositorioUsuario {
         Log.i(CATEGORIA, "Atualizou [" + count + "] registros");
         return count;
     }
-    // Deleta o curriculo com o id fornecido
+    // Deleta o usuario com o id fornecido
     public int deletar(long id) {
         String where = Usuarios._ID + "=?";
         String _id = String.valueOf(id);
@@ -202,7 +186,7 @@ public class RepositorioUsuario {
         int count = deletar(where, whereArgs);
         return count;
     }
-    // Deleta o curriculo com os argumentos fornecidos
+    // Deleta o usuario com os argumentos fornecidos
     public int deletar(String where, String[] whereArgs) {
         int count = db.delete(NOME_TABELA, where, whereArgs);
         Log.i(CATEGORIA, "Deletou [" + count + "] registros");
@@ -303,17 +287,6 @@ public class RepositorioUsuario {
             return null;
         }
         return usuario;
-    }
-
-    // Busca um usuario utilizando as configuracoes definidas no
-    // SQLiteQueryBuilder
-    // Utilizado pelo Content Provider de usuario
-    public Cursor query(SQLiteQueryBuilder queryBuilder, String[] projection,
-                        String selection, String[] selectionArgs,
-                        String groupBy, String having, String orderBy) {
-        Cursor c = queryBuilder.query(this.db, projection, selection, selectionArgs,
-                groupBy, having, orderBy);
-        return c;
     }
 
     // Fecha o banco

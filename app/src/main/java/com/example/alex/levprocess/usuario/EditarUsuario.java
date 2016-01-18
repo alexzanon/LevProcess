@@ -23,8 +23,6 @@ import org.w3c.dom.Text;
 
 public class EditarUsuario extends Activity {
 
-    static final int RESULT_SALVAR = 1;
-    static final int RESULT_EXCLUIR = 2;
     private EditText campoLogin, campoSenha, campoNome, campoCpf, campoDataNascimento, campoTelefone, campoEmail;
     private TextView campoTipo;
     private RadioButton rbcliente, rbmodelador, rbadministrador;
@@ -162,7 +160,7 @@ public class EditarUsuario extends Activity {
     // Salvar o usuario
     protected void salvarUsuario(Usuario usuario) {
         repositorio.salvar(usuario);
-        Toast.makeText(this, "Usuario cadastrado com sucesso", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
     }
 
     // Excluir o usuario

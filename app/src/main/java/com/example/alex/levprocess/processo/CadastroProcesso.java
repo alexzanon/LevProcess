@@ -22,7 +22,6 @@ import com.example.alex.levprocess.usuario.EditarUsuario;
 public class CadastroProcesso extends ListActivity {
 
     protected static final int INSERIR_EDITAR = 1;
-    protected static final int BUSCAR = 2;
     protected static final int VOLTAR = 3;
     private RepositorioProcesso repositorio;
     private List<Processo> processos;
@@ -48,7 +47,6 @@ public class CadastroProcesso extends ListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        menu.add(0, BUSCAR, 0, "Buscar").setIcon(R.drawable.pesquisar);
         menu.add(0, VOLTAR, 0, "Voltar").setIcon(R.drawable.limpar);
         return true;
     }
@@ -60,10 +58,6 @@ public class CadastroProcesso extends ListActivity {
             case INSERIR_EDITAR:
                 // Abre a tela com o formulario para adicionar
                 startActivityForResult(new Intent(this, NovoProcesso.class), INSERIR_EDITAR);
-                break;
-            case BUSCAR:
-                // Abre a tela para buscar o processo pelo nome
-                startActivity(new Intent(this, BuscarProcesso.class));
                 break;
             case VOLTAR:
                 // Abre a tela para buscar o processo pelo nome

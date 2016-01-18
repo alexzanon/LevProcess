@@ -19,7 +19,6 @@ import com.example.alex.levprocess.usuario.Usuario.Usuarios;
 
 public class CadastroUsuarios extends ListActivity {
     protected static final int INSERIR_EDITAR = 1;
-    protected static final int BUSCAR = 2;
     private RepositorioUsuario repositorio;
     private List<Usuario> usuarios;
 
@@ -44,7 +43,6 @@ public class CadastroUsuarios extends ListActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         menu.add(0, INSERIR_EDITAR, 0, "Inserir Novo").setIcon(R.drawable.novo);
-        menu.add(0, BUSCAR, 0, "Buscar").setIcon(R.drawable.pesquisar);
         return true;
     }
 
@@ -56,10 +54,11 @@ public class CadastroUsuarios extends ListActivity {
                 // Abre a tela com o formulario para adicionar
                 startActivityForResult(new Intent(this, EditarUsuario.class), INSERIR_EDITAR);
                 break;
-            case BUSCAR:
+            /*case BUSCAR:
                 // Abre a tela para buscar o usuario pelo nome
                 startActivity(new Intent(this, BuscarUsuario.class));
-                break;
+                break;*/
+
         }
         return true;
     }
