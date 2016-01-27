@@ -83,7 +83,8 @@ public class CadastrarAtividade_Condicao extends ListActivity {
         // Recupera a atividade_condicao selecionado
         Atividade_Condicao atividade_condicao = atividade_condicaos.get(posicao);
         // Cria a intent para abrir a tela de editar
-        Intent it = new Intent(this, EditarAtividade_Condicao.class);
+        Intent it = new Intent(this, DadosAtividade_Condicao.class);
+        //Intent it = new Intent(this, EditarAtividade_Condicao.class); //quando for cliente
         // Passa o id da atividade_condicao como parametro
         it.putExtra(Atividade_Condicaos._ID, atividade_condicao.id);
         // Abre a tela de edicao

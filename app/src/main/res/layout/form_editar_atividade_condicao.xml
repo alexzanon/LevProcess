@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:layout_marginTop="10dip"
-        android:text="Nome:"
+        android:text="Nome da Atividade ou Condição:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoNomeAtividade"
@@ -23,7 +23,7 @@
     <TextView android:id="@+id/process"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Processo:"
+        android:text="Processo Envolvido:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoNomeProcesso"
@@ -34,7 +34,7 @@
     <TextView android:id="@+id/text2"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Responsável:"
+        android:text="Responsável pela Atividade/Condição:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoResponsavel"
@@ -44,7 +44,7 @@
     <TextView android:id="@+id/text3"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Departamento:"
+        android:text="Departamento Gerado pela Atividade/Condição:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoDepartamento"
@@ -54,7 +54,7 @@
     <TextView android:id="@+id/text4"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Tipo:"
+        android:text="Tipo: (Atividade ou Condição)"
         android:textColor="#000000" />
 
     <RadioGroup android:id="@+id/rdGroup1"
@@ -77,7 +77,7 @@
     <TextView android:id="@+id/text5"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Detalhamento:"
+        android:text="Detalhamento da Atividade/Condição:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoDetalhamento"
@@ -87,7 +87,7 @@
     <TextView android:id="@+id/text6"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:text="Documento:"
+        android:text="Documento Gerado pela Atividade/Condição:"
         android:textColor="#000000" />
 
     <EditText android:id="@+id/campoDocumento"

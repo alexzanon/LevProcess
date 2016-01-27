@@ -79,6 +79,7 @@ public class CadastroProcesso extends ListActivity {
         // Recupera o processo selecionado
         Processo processo = processos.get(posicao);
         // Cria a intent para abrir a tela de editar
+        //Intent it = new Intent(this, EditarProcesso.class); Quando for cliente
         Intent it = new Intent(this, DadosProcesso.class);
         // Passa o id do processo como parametro
         it.putExtra(Processos._ID, processo.id);

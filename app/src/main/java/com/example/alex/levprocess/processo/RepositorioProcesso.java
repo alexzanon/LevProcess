@@ -149,6 +149,7 @@ public class RepositorioProcesso {
         long id = inserir(values);
         return id;
     }
+
     // Insere um novo processo
     public long inserir(ContentValues valores) {
         long id = db.insert(NOME_TABELA, "", valores);

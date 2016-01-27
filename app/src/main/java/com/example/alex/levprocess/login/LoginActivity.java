@@ -83,14 +83,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         String senha = edtPassword.getText().toString();
         if (v.getId() == R.id.botaoLogar) {
             if (validateFields()) {
-                if (usuario.equals("daian") && senha.equals("123456")) {
+                if (usuario.equals("modelador") && senha.equals("123456")) {
                     /**
                      * Um trabalho futuro será implementar uma funcionalidade para validar login e senha
                      */
                     Toast.makeText(this, resources.getString(R.string.login_auth_okm), Toast.LENGTH_LONG).show();
                     Intent it = new Intent(LoginActivity.this, MenuModelador.class);
                     startActivityForResult(it, 1);
-                } else if (usuario.equals("lucas") && senha.equals("123456")){
+                } else if (usuario.equals("cliente") && senha.equals("123456")){
                     Toast.makeText(this, resources.getString(R.string.login_auth_okc), Toast.LENGTH_LONG).show();
                     Intent it = new Intent(LoginActivity.this, MenuCliente.class);
                     startActivityForResult(it, 1);

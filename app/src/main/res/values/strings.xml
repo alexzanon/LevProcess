@@ -10,6 +10,7 @@
     <string name="title_activity_nova_atividade_condicao">Lev Process - Nova A./C.</string>
     <string name="title_activity_buscar_atividade_condicao">Lev Process - Buscar A./C.</string>
     <string name="title_activity_buscar_processo">Lev Process - Buscar Processo</string>
+    <string name="title_activity_validar_processo">Lev Process - Validar Processo</string>
 
     <string name="img_content_description"/>
     <string name="login_user_required">Campo usuario obrigatório!</string>

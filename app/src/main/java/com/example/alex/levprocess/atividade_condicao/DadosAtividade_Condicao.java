@@ -5,6 +5,7 @@ package com.example.alex.levprocess.atividade_condicao;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.alex.levprocess.R;
 import com.example.alex.levprocess.atividade_condicao.Atividade_Condicao.Atividade_Condicaos;
+import com.example.alex.levprocess.modelador.MenuModelador;
 
 public class DadosAtividade_Condicao extends Activity {
 
@@ -58,6 +60,13 @@ public class DadosAtividade_Condicao extends Activity {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
                 finish();// Fecha a tela
+            }
+        });
+        Button btVoltarMenu = (Button) findViewById(R.id.btVoltarMenu);
+        btVoltarMenu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent it = new Intent(DadosAtividade_Condicao.this, MenuModelador.class);
+                startActivityForResult(it, 2);
             }
         });
     }

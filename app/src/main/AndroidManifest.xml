@@ -61,8 +61,7 @@
             android:name=".atividade_condicao.EditarAtividade_Condicao" >
         </activity>
         <activity
-            android:name=".atividade_condicao.BuscarAtividade_Condicao"
-            android:label="@string/title_activity_buscar_atividade_condicao">
+            android:name=".atividade_condicao.BuscarAtividade_Condicao" >
         </activity>
         <activity
             android:name=".atividade_condicao.NovaAtividade_Condicao"

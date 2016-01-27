@@ -24,7 +24,7 @@
         <TextView android:id="@+id/text2"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Responsável:"
+            android:text="Responsável pelo Processo:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/tvResponsavel"
@@ -34,7 +34,7 @@
         <TextView android:id="@+id/text3"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Papel:"
+            android:text="Papel do Responsável pelo Processo:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/tvPapel"
@@ -44,7 +44,7 @@
         <TextView android:id="@+id/text4"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Objetivo:"
+            android:text="Objetivo do Processo:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/tvObjetivo"
@@ -54,7 +54,7 @@
         <TextView android:id="@+id/text5"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Condição:"
+            android:text="Condição Inicial do Processo:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/tvCondicao"
@@ -64,7 +64,7 @@
         <TextView android:id="@+id/text6"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Entradas:"
+            android:text="Entradas para o Processo:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/tvEntradas"
@@ -74,7 +74,7 @@
         <TextView android:id="@+id/text7"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Saídas:"
+            android:text="Saídas do Processo:"
             android:textColor="#000000" />
 
         <TextView
@@ -93,18 +93,6 @@
             android:background="#1E90FF"
             android:textColor="#F8F8FF"
             android:text="Listar Atividades/Condições" />
-
-        <Button
-            android:id="@+id/btValidar"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:padding="15dip"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:background="#1E90FF"
-            android:textColor="#F8F8FF"
-            android:text="Validar Processo" />
 
         <Button
             android:id="@+id/btVoltar"

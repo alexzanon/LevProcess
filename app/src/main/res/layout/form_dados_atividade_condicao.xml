@@ -32,7 +32,7 @@
         <TextView android:id="@+id/text2"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Responsável:"
+            android:text="Responsável pela Atividade/Condição:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/campoResponsavel"
@@ -42,7 +42,7 @@
         <TextView android:id="@+id/text3"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Departamento do Responsavel:"
+            android:text="Departamento do Responsável:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/campoDepartamento"
@@ -52,7 +52,7 @@
         <TextView android:id="@+id/text4"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Tipo:"
+            android:text="Tipo: (Atividade ou Condição)"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/campoTipo"
@@ -62,7 +62,7 @@
         <TextView android:id="@+id/text5"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Detalhamento:"
+            android:text="Detalhamento da Atividade/Condição:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/campoDetalhamento"
@@ -72,7 +72,7 @@
         <TextView android:id="@+id/text6"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:text="Documento:"
+            android:text="Documento Gerado pela Atividade/Condição:"
             android:textColor="#000000" />
 
         <TextView android:id="@+id/campoDocumento"
@@ -89,7 +89,19 @@
             android:gravity="center"
             android:background="#1E90FF"
             android:textColor="#F8F8FF"
-            android:text="Cancelar" />
+            android:text="Voltar" />
+
+        <Button
+            android:id="@+id/btVoltarMenu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:padding="15dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#1E90FF"
+            android:textColor="#F8F8FF"
+            android:text="Voltar ao Menu Principal" />
 
     </LinearLayout>
 </ScrollView>

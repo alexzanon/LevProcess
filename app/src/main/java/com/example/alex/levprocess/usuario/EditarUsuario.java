@@ -160,7 +160,7 @@ public class EditarUsuario extends Activity {
     // Salvar o usuario
     protected void salvarUsuario(Usuario usuario) {
         repositorio.salvar(usuario);
-        Toast.makeText(this, "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Usuario cadastrado com sucesso", Toast.LENGTH_LONG).show();
     }
 
     // Excluir o usuario

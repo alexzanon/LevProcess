@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
 
 public class Processo {
 
-    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS, Processos.VALIDACAO};
+    public static String[] colunas = new String[] { Processos._ID, Processos.NOME, Processos.RESPONSAVEL, Processos.PAPEL, Processos.OBJETIVO, Processos.CONDICAO, Processos.ENTRADAS, Processos.SAIDAS};
 
     public static final String AUTHORITY = "br.livro.android.provider.processos";
 
@@ -22,7 +22,6 @@ public class Processo {
     public String condicao;
     public String entradas;
     public String saidas;
-    public String  validacao;
 
     public Processo() {
 
@@ -44,11 +43,6 @@ public class Processo {
         this.id = id;
         this.nome = nome;
         this.responsavel = responsavel;
-    }
-
-    public Processo(String validacao) {
-        super();
-        this.validacao = validacao;
     }
 
     public static final class Processos implements BaseColumns {
@@ -73,7 +67,6 @@ public class Processo {
         public static final String CONDICAO = "condicao";
         public static final String ENTRADAS = "entradas";
         public static final String SAIDAS = "saidas";
-        public static final String VALIDACAO = "validacao";
 
         // Metodo que constroi uma Uri para um Processo especifico, com o seu id
         // A Uri e no formato "content://br.livro.android.provider.processo/processos/id"
@@ -86,6 +79,6 @@ public class Processo {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", Responsável: " + responsavel + ", Papel: " + papel + ", Objetivo: " + objetivo + ", Condição: " + condicao + ", Entradas: " + entradas + ", Saídas: " + saidas + ", Validação: " + validacao;
+        return "Nome: " + nome + ", Responsável: " + responsavel + ", Papel: " + papel + ", Objetivo: " + objetivo + ", Condição: " + condicao + ", Entradas: " + entradas + ", Saídas: " + saidas;
     }
 }
